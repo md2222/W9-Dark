@@ -1196,11 +1196,11 @@ notebook {
 paned > separator {
   border: none;
   color: transparent;
-  background-color: shade(#909090, 0.9); }
+  background-color: shade(#909090, 0.7); }
   paned > separator:backdrop {
-    background-color: shade(#909090, 0.9); }
+    background-color: shade(#909090, 0.7); }
   paned > separator:selected {
-    background-color: shade(#909090, 0.9); }
+    background-color: shade(#909090, 0.7); }
 paned .sidebar.left, paned .sidebar.right, paned .sidebar.left:dir(rtl), paned .sidebar:dir(rtl), paned .sidebar:dir(ltr), paned .sidebar {
   border-style: none; }
 
@@ -1605,73 +1605,73 @@ separator {
   -gtk-icon-source: none;
   min-width: 1px;
   min-height: 1px;
-  background-color: shade(#909090, 0.9); }
+  background-color: shade(#909090, 0.7); }
   separator:backdrop {
-    background-color: shade(#909090, 0.8); }
+    background-color: shade(#909090, 0.7); }
   button separator {
     margin: 4px 1px; }
   .sidebar view separator, view separator, separator .separator, separator {
     border: none;
-    background-color: shade(#909090, 0.9); }
+    background-color: shade(#909090, 0.7); }
     .sidebar view separator:backdrop, view separator:backdrop, separator .separator:backdrop, separator:backdrop {
       border: none;
-      background-color: shade(#909090, 0.8); }
+      background-color: shade(#909090, 0.7); }
   .primary-toolbar separator, toolbar separator {
-    background-color: shade(#909090, 0.9); }
+    background-color: shade(#909090, 0.7); }
     .primary-toolbar separator:backdrop, toolbar separator:backdrop {
-      background-color: shade(#909090, 0.8); }
+      background-color: shade(#909090, 0.7); }
   .primary-toolbar button separator, toolbar button separator, .primary-toolbar:not(.libreoffice-toolbar) separator {
-    background-color: shade(#909090, 0.9); }
+    background-color: shade(#909090, 0.7); }
     .primary-toolbar button separator:backdrop, toolbar button separator:backdrop, .primary-toolbar:not(.libreoffice-toolbar) separator:backdrop {
-      background-color: shade(#909090, 0.8); }
+      background-color: shade(#909090, 0.7); }
   headerbar separator {
     -GtkWidget-window-dragging: true;
     margin-top: 4px;
     margin-bottom: 4px;
-    background-color: shade(#909090, 0.9); }
+    background-color: shade(#909090, 0.7); }
     headerbar separator:backdrop {
-      background-color: shade(#909090, 0.8); }
+      background-color: shade(#909090, 0.7); }
   headerbar button separator {
-    border-color: shade(#909090, 0.9); }
+    border-color: shade(#909090, 0.7); }
     headerbar button separator:backdrop {
-      border-color: shade(#909090, 0.8); }
+      border-color: shade(#909090, 0.7); }
   .titlebar separator, .titlebar:not(headerbar) > separator, .titlebar separator.titlebutton, 
   .titlebar:not(headerbar) > separator.titlebutton {
     -GtkWidget-window-dragging: true;
-    border-color: shade(#909090, 0.9); 
+    border-color: shade(#909090, 0.7); 
 	}
     .titlebar separator:backdrop, .titlebar:not(headerbar) > separator:backdrop, .titlebar separator.titlebutton:backdrop, 
     .titlebar:not(headerbar) > separator.titlebutton:backdrop {
-      background-color: shade(#909090, 0.8); 
+      background-color: shade(#909090, 0.7); 
   }
   headerbar separator.titlebutton, .titlebar:not(headerbar) separator.titlebutton {
     min-width: 1px;
     min-height: 1px;
-    border-color: shade(#909090, 0.9); 
+    border-color: shade(#909090, 0.7); 
 	}
     headerbar separator.titlebutton:backdrop, .titlebar:not(headerbar) separator.titlebutton:backdrop {
-      background-color: shade(#909090, 0.8); 
+      background-color: shade(#909090, 0.7); 
 	}
   .titlebutton button separator, .titlebutton separator.titlebutton {
-    border-color: shade(#909090, 0.9); 
+    border-color: shade(#909090, 0.7); 
   }
     .titlebutton button separator:backdrop, .titlebutton separator.titlebutton:backdrop {
-      border-color: shade(#909090, 0.8); 
+      border-color: shade(#909090, 0.7); 
 	}
  menu separator, .csd menu separator,
   .menu separator, .csd
   .menu separator {
     margin: 2px 0;
-    background-color: shade(#909090, 0.8); 
+    background-color: shade(#909090, 0.7); 
   }
   menuitem separator {
     border-width: 1px;
     border-style: none;
-    color: shade(#909090, 0.8); 
+    color: shade(#909090, 0.7); 
   }
   popover separator {
     border: 0;
-    color: shade(#909090, 0.8);
+    color: shade(#909090, 0.7);
     background-color: transparent; 
   }
   combobox separator {
@@ -2019,7 +2019,7 @@ toolbar {
   padding: 4px;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-color: shade(#909090, 0.9);
+  border-color: shade(#909090, 0.7);
   color: #e0e0e0;
   background-color: #404040; }
   .primary-toolbar:backdrop {
@@ -2976,7 +2976,7 @@ Window header with buttons
   padding: 2px 4px;
   color: #e0e0e0;
   background-color: #404040;
-  border-bottom: 1px solid shade(#909090, 0.8); 
+  border-bottom: 1px solid shade(#909090, 0.7); 
 }
   .titlebar headerbar, .titlebar:not(headerbar) headerbar, headerbar.default-decoration headerbar, 
   .csd headerbar.default-decoration headerbar, .default-decoration.titlebar:not(headerbar) headerbar, 
