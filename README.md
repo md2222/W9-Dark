@@ -10,6 +10,6 @@ Project in development. This is Beta version.
 
 ### Manual installation
 
-Extract the zip file to the themes directory i.e. '/home/USERNAME/.themes'. You can rename the folder. This will be the name of the theme.
+Extract W9-Dark folder to the themes directory i.e. '/home/USERNAME/.themes'. You can rename the folder. This will be the name of the theme.
 
 You can override gtk theme used by Firefox: navigate to about:config create a string key widget.content.gtk-theme-override set the value to any theme name, for example "win-8 MD Blue". Restart Firefox to apply.
