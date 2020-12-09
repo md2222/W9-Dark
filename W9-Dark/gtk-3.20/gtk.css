@@ -1,5 +1,5 @@
 /*
-0.12 - Fixed checkbox and radio in LibreOffice options
+0.2 - treeview header button
 
 hover color - e2eff7  cfe7ff  caeaff  c5e5f5  308cc6
 red  ff5b5e  ff413b ? ff5b60
@@ -64,7 +64,7 @@ error  d14235  e61b23  ed1c24
     background-color: #308cc6; }
 
 image, image:disabled, label, label:disabled, box, box:disabled {
-  background-color: transparent; }  /* над системными кнопками окна в заголовке-панели, архиватор  */
+  background-color: transparent; }  /* Archive manager, above window system buttons */
 
 label selection {
   background-color: #308cc6;
@@ -1050,7 +1050,8 @@ notebook {
         padding-top: 0;
         padding-bottom: 0; }
   notebook > stack:not(:only-child) {
-    background-color: #404040; }
+    background-color: #404040; 
+    }
   notebook tab {
     padding: 3px 6px;
     border-width: 1px;
@@ -1091,38 +1092,42 @@ notebook {
 		padding: 0;
 	}
   notebook > header {
-    padding-top: 2px;
     background-color: shade(#404040, 0.9); }
     notebook > header:backdrop {
       background-color: shade(#404040, 0.9); }
+      
     notebook > header.top {
-      box-shadow: 0 1px shade(#404040, 0.9); 
+      border-bottom: 1px solid #909090;
+      /*box-shadow: 0 1px shade(#ff4040, 0.9); */
 	}
 
      notebook > header.top > tabs > tab {
-        border-bottom: none;
-        margin-top: 2px;  /* offset relative to checked */
+        border-bottom: transparent;
+        margin-top: 3px;  /* offset relative to checked */
 	 }
         notebook > header.top > tabs > tab:checked {
-            border-top-left-radius: 0px;
-            border-top-right-radius: 0px;
-            margin-top: 0;
+            margin-top: 1px;
             margin-bottom: -1px;
-            padding-bottom: 6px;   /* when one tab ... 3px (default) + 2 (offset) + 1 (this margin) */
+            padding-bottom: 6px;   
             border-top-width: 3px;
             border-style: solid;
             border-top-color: #308cc6;
 	    }
+        notebook > header.top > tabs > tab:checked:hover {
+            /*border-bottom: transparent;*/
+	    }
 
     notebook > header.bottom {
-      padding-top: 0;
-      box-shadow: 0 -1px shade(#404040, 0.9); }
+      padding-bottom: 1px;
+      /*box-shadow: 0 -1px shade(#404040, 0.9); */
+      border-top: 1px solid #909090;
+      }
       notebook > header.bottom > tabs > tab {
-        border-top: none;
-        margin-bottom: 2px; 
+        border-top: transparent;
+        margin-bottom: 3px; 
 	}
         notebook > header.bottom > tabs > tab:checked {
-          margin-bottom: 0;
+          margin-bottom: 1px;
           margin-top: -1px; 
             border-bottom-width: 3px;
             border-style: solid;
@@ -1130,12 +1135,16 @@ notebook {
 		}
         
     notebook > header.right {
-      box-shadow: -1px 0 shade(#404040, 0.9); }
+      padding-right: 1px;
+      /*box-shadow: -1px 0 shade(#404040, 0.9); */
+      border-left: 1px solid #909090;
+      }
       notebook > header.right > tabs > tab {
         border-left: none;
-        margin-right: 2px; }
+        margin-right: 3px; 
+        }
         notebook > header.right > tabs > tab:checked {
-          margin-right: 0;
+          margin-right: 1px;
           margin-left: -1px; 
             border-right-width: 3px;
             border-style: solid;
@@ -1143,12 +1152,15 @@ notebook {
           }
           
     notebook > header.left {
-      box-shadow: 1px 0 shade(#404040, 0.9); }
+      padding-left: 1px;
+      /*box-shadow: 1px 0 shade(#404040, 0.9); */
+      border-right: 1px solid #909090;
+      }
       notebook > header.left > tabs > tab {
         border-right: none;
-        margin-left: 2px; }
+        margin-left: 3px; }
         notebook > header.left > tabs > tab:checked {
-          margin-left: 0;
+          margin-left: 1px;
           margin-right: -1px; 
             border-left-width: 3px;
             border-style: solid;
@@ -1877,7 +1889,7 @@ headerbar, headerbar:not(.titlebar) {
     color: alpha(currentColor, 0.7); 
   }
 /*
-headerbar button - кнопки в заголовке
+headerbar button - buttons in window title
 */
   headerbar button, headerbar:not(.titlebar) button {
     padding: 5px;
@@ -2435,7 +2447,7 @@ treeview {
     border-style: solid;
     border-width: 0 1px 1px 0;
     background-image: none;
-    color: shade(#e0e0e0, 0.8);
+    color: shade(#e0e0e0, 0.9);
     background-color: #404040; 
   }
     treeview header button:last-child {
