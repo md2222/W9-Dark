@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=W9-Blue
+Name=W9-Dark
 Comment=UI theme for Linux
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=W9-Blue
-MetacityTheme=W9-Blue
+GtkTheme=W9-Dark
+MetacityTheme=W9-Dark
 IconTheme=Mint-Y-Dark
 CursorTheme=DMZ-White
 ButtonLayout=menu:minimize,maximize,close
