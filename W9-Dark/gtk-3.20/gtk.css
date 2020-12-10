@@ -1360,15 +1360,29 @@ scale {
     scale fill:backdrop, scale trough:backdrop {
         border-color: shade(#909090, 0.8); }
   scale highlight {
-    border: none;
-    border-radius: 0px;
-    background-color: transparent; }
-    scale highlight:disabled {
-      background-color: transparent; }
-      scale highlight:disabled:backdrop {
-        background-color: transparent; }
+    background-color: #308cc6; }
     scale highlight:backdrop {
-      background-color: transparent; }
+      background-color: shade(#308cc6, 0.9); }
+    scale highlight:disabled {
+      background-color: shade(#308cc6, 0.8); }
+      scale highlight:disabled:backdrop {
+        background-color: shade(#308cc6, 0.8); }
+  scale value {
+    color: #e0e0e0; }
+  scale marks {
+    color: #909090; }
+    scale marks.top {
+      margin-bottom: 6px;
+      margin-top: -12px; }
+    scale marks.bottom {
+      margin-top: 6px;
+      margin-bottom: -12px; }
+    scale marks.top {
+      margin-right: 6px;
+      margin-left: -12px; }
+    scale marks.bottom {
+      margin-left: 6px;
+      margin-right: -12px; }
       
   scale.horizontal indicator {
     min-height: 6px;
@@ -1464,22 +1478,6 @@ scale {
         background-image: url("assets/slider-vert-left-insensitive.png"); }
     scale.vertical.marks-before:backdrop {
       background-image: url("assets/slider-vert-left-insensitive.png"); }
-  scale value {
-    color: alpha(currentColor, 0.35); }
-  scale marks {
-    color: alpha(currentColor, 0.35); }
-    scale marks.top {
-      margin-bottom: 6px;
-      margin-top: -12px; }
-    scale marks.bottom {
-      margin-top: 6px;
-      margin-bottom: -12px; }
-    scale marks.top {
-      margin-right: 6px;
-      margin-left: -12px; }
-    scale marks.bottom {
-      margin-left: 6px;
-      margin-right: -12px; }
 
 /*
 check  ~/.config/gtk-3.0/gtk.css
