@@ -1,5 +1,5 @@
 # name: W9_Dark
-# version: 0.4
+# version: 0.5
 # author: MD
 # date: 10.12.2020
 
@@ -40,16 +40,16 @@ style "default"
 	GtkButton::child-displacement-y	= 0
 	GtkButton::default-border	= { 0, 0, 0, 0 }
 	GtkButton::default-outside_border = { 0, 0, 0, 0 }
-  #GtkButton::inner-border           = {4, 4, 4, 4}  # увеличивает размер
+    #GtkButton::inner-border           = {4, 4, 4, 4}  # увеличивает размер
 
     GtkEntry::state-hint  = 1
 
 	GtkRange::trough-border		= 0
 	GtkRange::slider-width		= 14
-	GtkRange::stepper-size		= 0
-	#GtkRange::stepper-spacing   = 0
+	GtkRange::stepper-size		= 5
+	GtkRange::stepper-spacing   = 0
+	GtkRange::arrow-scaling     = 0.25
     #GtkRange::activate-slider   = 1
-    #GtkRange::arrow-scaling     = 0.25
 
 	GtkScrollbar::trough-border	= 0
     GtkScrollbar::slider-width = 15
@@ -61,13 +61,13 @@ style "default"
 	GtkScrolledWindow ::scrollbar-spacing		= 0
 	GtkScrolledWindow ::scrollbars-within-bevel	= 1
 
-	#GtkHScale::slider_length 	= 11
-	#GtkHScale::slider_width 	= 19
-	#GtkVScale::slider_length 	= 11
-	#GtkVScale::slider_width 	= 19
-    GtkScale::slider_length = 19 
-    GtkScale::slider_width = 19  
-    GtkScale::trough-side-details = 1   
+	GtkHScale::slider_length 	= 11
+	GtkHScale::slider_width 	= 19
+	GtkVScale::slider_length 	= 11
+	GtkVScale::slider_width 	= 19
+    #GtkScale::slider_length = 19
+    #GtkScale::slider_width = 19
+    #GtkScale::trough-side-details = 1
     
   GtkProgressBar::min-horizontal-bar-height = 6
   GtkProgressBar::min-vertical-bar-width = 6
@@ -106,7 +106,7 @@ style "default"
 	# Colors
 
 	bg[NORMAL]		= @bg_color		# Normal Background, inactive Metacity bar, buttons
-	bg[PRELIGHT]		= shade (1.02, @bg_color)		# Mouseover buttons
+	bg[PRELIGHT]		= shade (1.2, @bg_color)		# Mouseover buttons
 	bg[ACTIVE]		= shade (0.9, @bg_color)		# Mouseclicking, Tabs, active window list
 	bg[SELECTED]		= @selected_bg_color		# Metacity Bar
 	bg[INSENSITIVE] 	= @bg_color		# Insensitive buttons
@@ -1950,44 +1950,28 @@ style "combobox_button"
   ythickness = 3
 }
 
+
 style "range"
 {	
   engine "pixmap" 
   {
-    image {
-      function = BOX
-      detail = "trough-upper"
-      file = "Range/trough-horizontal.png"
-      border = { 4, 4, 0, 0 }
-      stretch = TRUE
-      orientation = HORIZONTAL
-    }
-
-    image {
-      function = BOX
-      detail = "trough-lower"
-      file = "Range/trough-horizontal-active.png"
-      border = { 4, 4, 0, 0 }
-      stretch = TRUE
-      orientation = HORIZONTAL
-    }
-
-    image {
-      function = BOX
-      detail = "trough-upper"
-      file = "Range/trough-vertical.png"
-      border = { 0, 0, 4, 4 }
-      stretch = TRUE
-      orientation = VERTICAL
-    }
-
-    image {
-      function = BOX
-      detail = "trough-lower"
-      file = "Range/trough-vertical-active.png"
-      border = { 0, 0, 4, 4 }
-      stretch = TRUE
-      orientation = VERTICAL
+    image 
+    {
+      function			= BOX
+      detail			= "trough"
+      file			= "Range/trough-horizontal.png"
+      border			= { 4, 4, 0, 0 }
+      stretch			= TRUE
+      orientation		= HORIZONTAL
+    }	
+    image 
+    {
+      function			= BOX
+      detail			= "trough"
+      file			= "Range/trough-vertical.png"
+      border			= { 0, 0, 4, 4 }
+      stretch			= TRUE
+      orientation		= VERTICAL
     }
 
     # Horizontal
