@@ -1,9 +1,9 @@
 # name: W9_Dark
-# version: 0.5
+# version: 0.6
 # author: MD
 # date: 10.12.2020
 
-gtk-color-scheme	= "bg_color:#404040\nfg_color:#e0e0e0\nbase_color:#272d3a\ntext_color:#e0e0e0\nselected_bg_color:#308cc6\nselected_fg_color:#f0f0f0\ninsensitive_bg_color:#404040\ntooltip_bg_color:#606060\ntooltip_fg_color:#e7e7e7"
+gtk-color-scheme	= "bg_color:#404040\nfg_color:#e0e0e0\nbase_color:#272d3a\ntext_color:#e0e0e0\ninsensitive_base_color:#333333\nselected_bg_color:#308cc6\nselected_fg_color:#f0f0f0\ninsensitive_bg_color:#404040\ntooltip_bg_color:#606060\ntooltip_fg_color:#e7e7e7"
 
 gtk-icon-sizes = "gtk-button=16,16" # This makes button icons smaller.
 gtk-auto-mnemonics = 1  # Disables ugly lines under menu items
@@ -121,7 +121,7 @@ style "default"
 	base[PRELIGHT]		= shade (0.95, @base_color)	# Mouseover menu
 	base[ACTIVE]		= shade (0.9, @selected_bg_color)	# Menu active item in inactive window
 	base[SELECTED]		= @selected_bg_color	# Menu active item in active window
-	base[INSENSITIVE]	= @base_color	# Background, insensitive
+	base[INSENSITIVE]	= @insensitive_base_color	# Background, insensitive
 
 	text[NORMAL]		= @text_color	# Text in window
 	text[PRELIGHT]		= @text_color	# Text on Mouseover
@@ -630,11 +630,13 @@ style "default"
     }
 }
 
+
 style "toplevel_hack"
 {
     engine "adwaita" {
     }
 }
+
 
 style "ooo_stepper_hack"
 {
@@ -642,6 +644,7 @@ style "ooo_stepper_hack"
 	GtkScrollbar::has-backward-stepper	= 1
 	GtkScrollbar::has-forward-stepper	= 1
 }
+
 
 # System settings has param "Override theme scrollbar...". Save it in ~/.gtkrc-2.0, 
 
@@ -761,6 +764,7 @@ style "scrollbar"
   }
 }
 
+
 style "menu"
 {
 	xthickness	= 0
@@ -788,11 +792,13 @@ style "menu"
     }
 }
 
+
 style "menu_framed_box"
 {
 	engine "mist" 	{
     }
 }
+
 
 style "menu_item"
 {
@@ -1030,6 +1036,7 @@ style "menu_item"
     }
 }
 
+
 style "separator_menu_item" 
 {
   engine "pixmap" {
@@ -1069,6 +1076,7 @@ style "menubar"
 	  }
 	}
 }
+
 
 style "menubar_item"
 {
@@ -1135,6 +1143,7 @@ style "button"
   }
 }
 
+
 style "button_nohilight"
 {
   xthickness	= 4
@@ -1180,19 +1189,18 @@ style "button_nohilight"
   }
 }
 
+
 style "checkbutton"
 {
   fg[PRELIGHT] = @text_color
   fg[ACTIVE]   = @text_color
 }
 
+
 style "entry"
 {
-	xthickness	= 3
-	ythickness   	= 3
-
-    base[NORMAL] = @base_color
-    base[INSENSITIVE] = @insensitive_bg_color
+	xthickness	= 4
+	ythickness  = 4
 
 	engine "pixmap"
 	{
@@ -1224,6 +1232,7 @@ style "entry"
 		function	= SHADOW
 		detail		= "entry"
         state       = ACTIVE
+		shadow		= IN
 		file		= "Entry/entry-border-active-bg.png"
 		border		= { 4, 4, 4, 4 }
 		stretch		= TRUE
@@ -1235,6 +1244,7 @@ style "entry"
         detail          = "entry_bg"
         state           = NORMAL
         overlay_file    = "Entry/entry-border-fill.png"
+        #overlay_file    = "Others/null.png"
         overlay_border	= { 0, 0, 0, 0 }
         overlay_stretch = TRUE
     }
@@ -1245,6 +1255,17 @@ style "entry"
         detail          = "entry_bg"
         state           = ACTIVE
         overlay_file	= "Entry/entry-border-fill.png"
+        #overlay_file    = "Others/null.png"
+        overlay_border	= { 0, 0, 0, 0 }
+        overlay_stretch = TRUE
+    }
+
+    image
+    {
+        function        = FLAT_BOX
+        detail          = "entry_bg"
+        state           = INSENSITIVE
+        overlay_file	= "Entry/entry-border-fill-disabled.png"
         overlay_border	= { 0, 0, 0, 0 }
         overlay_stretch = TRUE
     }
@@ -1252,27 +1273,29 @@ style "entry"
     }
 }
 
+
 style "notebook_tab_label"
 {
     fg[ACTIVE] = @text_color
 }
+
 
 style "combobox_entry"
 {
 	xthickness	= 4
 	ythickness  = 4
 
-	engine "pixmap"
+  	engine "pixmap"
 	{
         # LTR version
-	image
+    image
 	{
 		function		= SHADOW
 		detail			= "entry"
         state           = NORMAL
 		shadow			= IN
 		file			= "Entry/combo-entry-border-bg.png"
-		border			= { 4, 4, 5, 4 }
+		border			= { 4, 4, 4, 4 }
 		stretch			= TRUE
         direction       = LTR
 	}
@@ -1284,7 +1307,7 @@ style "combobox_entry"
         state           = INSENSITIVE
 		shadow			= IN
 		file			= "Entry/combo-entry-border-disabled-bg.png"
-		border			= { 4, 4, 5, 4 }
+		border			= { 4, 4, 4, 4 }
 		stretch			= TRUE
         direction       = LTR
 	}
@@ -1295,7 +1318,7 @@ style "combobox_entry"
 		detail			= "entry"
         state           = ACTIVE
 		file			= "Entry/combo-entry-border-active-bg.png"
-		border			= { 4, 4, 5, 4 }
+		border			= { 4, 4, 4, 4 }
 		stretch			= TRUE
         direction       = LTR
     }
@@ -1661,6 +1684,7 @@ style "spinbutton"
   }
 }
 
+
 style "gimp_spin_scale"
 {
   bg[NORMAL] = @base_color
@@ -1747,6 +1771,7 @@ style "gimp_spin_scale"
   }
 }
 
+
 style "libreoffice_entry"
 {
         engine "pixmap"
@@ -1771,6 +1796,7 @@ style "libreoffice_entry"
         }
         }
 }
+
 
 style "notebook"
 {
@@ -1904,6 +1930,7 @@ style "notebook"
   }
 }
 
+
 style "handlebox"
 {
   engine "pixmap"
@@ -1929,6 +1956,7 @@ style "handlebox"
   }
 }
 
+
 style "combobox_separator"
 {
   xthickness = 0
@@ -1936,12 +1964,14 @@ style "combobox_separator"
   GtkWidget::wide-separators = 1
 }
 
+
 # +combobox height
 style "combobox"
 {
   xthickness = 2
   ythickness = 2
 }
+
 
 # padding of select line
 style "combobox_button"
@@ -2131,6 +2161,7 @@ style "treeview_header"
     }
 }
 
+
 style "scrolled_window"
 {
         xthickness      = 1
@@ -2147,6 +2178,7 @@ style "scrolled_window"
         }
     }
 }
+
 
 style "frame"
 {
@@ -2175,6 +2207,7 @@ style "frame"
                 gap_end_border          = { 0, 1, 0, 0 }
                 shadow                  = IN
         }
+        
         image
         {
                 function                = SHADOW
@@ -2195,6 +2228,7 @@ style "frame"
                 gap_end_border          = { 0, 1, 0, 0 }
                 shadow                  = OUT
         }
+        
         image
         {
                 function                = SHADOW
@@ -2215,6 +2249,7 @@ style "frame"
                 gap_end_border          = { 0, 1, 0, 0 }
                 shadow                  = ETCHED_IN
         }
+        
         image
         {
                 function                = SHADOW
@@ -2238,6 +2273,7 @@ style "frame"
         }
 }
 
+
 style "gimp_toolbox_frame"
 {
         engine "pixmap"
@@ -2249,6 +2285,7 @@ style "gimp_toolbox_frame"
         }
 }
 
+
 style "toolbar"
 {
         engine "pixmap"
@@ -2259,6 +2296,7 @@ style "toolbar"
         }
         }
 }
+
 
 style "inline_toolbar"
 {
@@ -2275,10 +2313,12 @@ style "inline_toolbar"
         }
 }
 
+
 style "notebook_viewport"
 {
         bg[NORMAL]   = @base_color
 }
+
 
 style "tooltips"
 {
@@ -2291,6 +2331,7 @@ style "tooltips"
     
 }
 
+
 style "eclipse-tooltips"
 {
     xthickness	= 8
@@ -2300,6 +2341,7 @@ style "eclipse-tooltips"
     fg[NORMAL]	  = @text_color
     bg[SELECTED]  = shade(1.05, @bg_color)
 }
+
 
 # Chromium
 style "chrome-gtk-frame"
@@ -2320,10 +2362,12 @@ style "chrome-gtk-frame"
 	ChromeGtkFrame::scrollbar-slider-normal-color = @bg_color
 }
 
+
 style "chrome_menu_item"
 {
         bg[SELECTED] = @selected_bg_color
 }
+
 
 style "null"
 {
