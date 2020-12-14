@@ -1,7 +1,7 @@
-# name: W9_Dark
-# version: 0.6
+# name: W9-Dark
+# version: 0.7
 # author: MD
-# date: 10.12.2020
+# date: 14.12.2020
 
 gtk-color-scheme	= "bg_color:#404040\nfg_color:#e0e0e0\nbase_color:#272d3a\ntext_color:#e0e0e0\ninsensitive_base_color:#333333\nselected_bg_color:#308cc6\nselected_fg_color:#f0f0f0\ninsensitive_bg_color:#404040\ntooltip_bg_color:#606060\ntooltip_fg_color:#e7e7e7"
 
@@ -1212,7 +1212,7 @@ style "entry"
         state       = NORMAL
 		shadow		= IN
 		file		= "Entry/entry-border-bg.png"
-		border		= { 4, 4, 4, 4 }
+		border		= { 8, 8, 8, 8 }
 		stretch		= TRUE
 	}
 
@@ -1223,7 +1223,7 @@ style "entry"
         state       = INSENSITIVE
 		shadow		= IN
 		file		= "Entry/entry-border-disabled-bg.png"
-		border		= { 4, 4, 4, 4 }
+		border		= { 8, 8, 8, 8 }
 		stretch		= TRUE
 	}
 
@@ -1234,7 +1234,7 @@ style "entry"
         state       = ACTIVE
 		shadow		= IN
 		file		= "Entry/entry-border-active-bg.png"
-		border		= { 4, 4, 4, 4 }
+		border		= { 8, 8, 8, 8 }
 		stretch		= TRUE
     }
 
@@ -1284,6 +1284,9 @@ style "combobox_entry"
 {
 	xthickness	= 4
 	ythickness  = 4
+
+	fg[INSENSITIVE]	= shade (0.6, @fg_color)
+	text[INSENSITIVE]	= shade (0.6, @text_color)	
 
   	engine "pixmap"
 	{
@@ -1460,11 +1463,14 @@ style "combobox_entry_button"
 
 style "combobox_cell"
 {
-  text[NORMAL]        = @fg_color
-  text[PRELIGHT]      = @selected_fg_color
-  text[SELECTED]      = @selected_fg_color
-  text[ACTIVE]        = @fg_color
-  bg[NORMAL] = @base_color
+    bg[NORMAL] = @base_color
+    text[NORMAL]        = @fg_color
+    text[PRELIGHT]      = @selected_fg_color
+    text[SELECTED]      = @selected_fg_color
+    text[ACTIVE]        = @fg_color
+    
+	text[INSENSITIVE]	= shade (0.6, @text_color)	
+	fg[INSENSITIVE]	= shade (0.6, @fg_color)
 }
 
 
@@ -1809,70 +1815,71 @@ style "notebook"
     image 
     {
         function		= EXTENSION
-	state			= ACTIVE
-	file			= "Tabs/tab-bottom.png"
-	border			= { 3,3,3,5 }
-	stretch			= TRUE
-	gap_side		= TOP
+        state			= ACTIVE
+        file			= "Tabs/tab-top.png"
+        border			= { 3,3,3,3 }
+        stretch			= TRUE
+        gap_side		= BOTTOM
     }
     image 
     {
         function		= EXTENSION
-	state			= ACTIVE
-	file			= "Tabs/tab-top.png"
-	border			= { 3,3,5,3 }
-	stretch			= TRUE
-	gap_side		= BOTTOM
+        state			= ACTIVE
+        file			= "Tabs/tab-bottom.png"
+        border			= { 3,3,3,3 }
+        stretch			= TRUE
+        gap_side		= TOP
     }
     image 
     {
         function		= EXTENSION
-	state			= ACTIVE
-	file			= "Tabs/tab-left.png"
-	border			= { 3,3,3,3 }
-	stretch			= TRUE
-	gap_side		= RIGHT
+        state			= ACTIVE
+        file			= "Tabs/tab-left.png"
+        border			= { 3, 3, 3, 3 }
+        stretch			= TRUE
+        gap_side		= RIGHT
     }
     image 
     {
         function		= EXTENSION
-	state			= ACTIVE
-	file			= "Tabs/tab-right.png"
-	border			= { 3,3,3,3 }
-	stretch			= TRUE
-	gap_side		= LEFT
+        state			= ACTIVE
+        file			= "Tabs/tab-right.png"
+        border			= { 3, 3, 3, 3 }
+        stretch			= TRUE
+        gap_side		= LEFT
     }	
+    
     image 
     {
         function		= EXTENSION
-	file			= "Tabs/tab-top-active.png"
-	border			= { 3,3,3,3 }
-	stretch			= TRUE
-	gap_side		= BOTTOM
+        file			= "Tabs/tab-top-active.png"
+        border			= { 3,3,3,3 }
+        stretch			= TRUE
+        gap_side		= BOTTOM
     }
     image 
     {
         function		= EXTENSION
-	file			= "Tabs/tab-bottom-active.png"
-	border			= { 3,3,3,3 }
-	stretch			= TRUE
-	gap_side		= TOP
+        file			= "Tabs/tab-bottom-active.png"
+        border			= { 3,3,3,3 }
+        stretch			= TRUE
+        gap_side		= TOP
     }
     image 
     {
         function		= EXTENSION
-	file			= "Tabs/tab-left-active.png"
-	border			= {  3,3,3,3 }
-	stretch			= TRUE
-	gap_side		= RIGHT
+        file			= "Tabs/tab-left-active.png"
+        border			= {  3,3,3,3 }
+        stretch			= TRUE
+        gap_side		= RIGHT
     }
     image
     {
         function		= EXTENSION
-	file			= "Tabs/tab-right-active.png"
-	border			= {  3,3,3,3 }
-	stretch			= TRUE
-	gap_side		= LEFT
+        file			= "Tabs/tab-right-active.png"
+        border			= {  3,3,3,3 }
+        stretch			= TRUE
+        gap_side		= LEFT
     }
 
 # How to draw boxes with a gap on one side (ie the page of a notebook)
@@ -1880,52 +1887,52 @@ style "notebook"
     image 
     {
         function			= BOX_GAP
-	file				= "Tabs/notebook.png" 
-	border				= { 4, 4, 4, 4 }
-	stretch				= TRUE
-	gap_file			= "Tabs/notebook-gap-horiz.png"
-	gap_border     			= { 1, 1, 0, 0 }
-	gap_side			= TOP
+        file				= "Tabs/notebook.png" 
+        border				= { 4, 4, 4, 4 }
+        stretch				= TRUE
+        gap_file			= "Tabs/notebook-gap-horiz.png"
+        gap_border     		= { 1, 1, 0, 0 }
+        gap_side			= TOP
     }
     image 
     {
         function			= BOX_GAP
-	file				= "Tabs/notebook.png"
-	border				= { 4, 4, 4, 4 }
-	stretch				= TRUE
-	gap_file			= "Tabs/notebook-gap-horiz.png"
-	gap_border			= { 1, 1, 0, 0 }
-	gap_side			= BOTTOM
+        file				= "Tabs/notebook.png"
+        border				= { 4, 4, 4, 4 }
+        stretch				= TRUE
+        gap_file			= "Tabs/notebook-gap-horiz.png"
+        gap_border			= { 1, 1, 0, 0 }
+        gap_side			= BOTTOM
     }
     image 
     {
         function			= BOX_GAP
-	file				= "Tabs/notebook.png"
-	border				= { 4, 4, 4, 4 }
-	stretch				= TRUE
-	gap_file			= "Tabs/notebook-gap-vert.png"
-	gap_border			= { 0, 0, 1, 1 }
-	gap_side			= LEFT
+        file				= "Tabs/notebook.png"
+        border				= { 4, 4, 4, 4 }
+        stretch				= TRUE
+        gap_file			= "Tabs/notebook-gap-vert.png"
+        gap_border			= { 0, 0, 1, 1 }
+        gap_side			= LEFT
     }
     image 
     {
         function			= BOX_GAP
-	file				= "Tabs/notebook.png" 
-	border				= { 4, 4, 4, 4 }
-	stretch				= TRUE
-	gap_file			= "Tabs/notebook-gap-vert.png"
-	gap_border			= { 0, 0, 1, 1 }
-	gap_side			= RIGHT
+        file				= "Tabs/notebook.png" 
+        border				= { 4, 4, 4, 4 }
+        stretch				= TRUE
+        gap_file			= "Tabs/notebook-gap-vert.png"
+        gap_border			= { 0, 0, 1, 1 }
+        gap_side			= RIGHT
     }
 
 # How to draw the box of a notebook when it isnt attached to a tab
 
     image 
     {
-	function		= BOX
-	file			= "Tabs/notebook.png"
-	border			= { 4, 4, 4, 4 }
-	stretch			= TRUE
+        function		= BOX
+        file			= "Tabs/notebook.png"
+        border			= { 4, 4, 4, 4 }
+        stretch			= TRUE
     }
   }
 }
@@ -2337,9 +2344,9 @@ style "eclipse-tooltips"
     xthickness	= 8
     ythickness	= 4
 
-    bg[NORMAL]	  = shade(1.05, @bg_color)
+    bg[NORMAL]	  = shade(1.1, @bg_color)
     fg[NORMAL]	  = @text_color
-    bg[SELECTED]  = shade(1.05, @bg_color)
+    bg[SELECTED]  = shade(1.1, @bg_color)
 }
 
 
