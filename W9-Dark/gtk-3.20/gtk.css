@@ -1,4 +1,5 @@
 /*
+0.8 - statusbar height
 0.2 - treeview header button
 
 hover color - e2eff7  cfe7ff  caeaff  c5e5f5  308cc6
@@ -19,7 +20,7 @@ error  d14235  e61b23  ed1c24
   -GtkScrolledwindow-scrollbar-spacing: 0;
   -GtkScrolledwindow-scrollbars-within-bevel: 0; /* border in Double comm scrollbar ? */
   -GtkTextView-error-underline-color: #d14235;
-  -GtkToolbutton-icon-spacing: 6;
+  -GtkToolbutton-icon-spacing: 4;
   -GtkToolItemGroup-expander-size: 11;
   -GtkWidget-text-handle-width: 20;
   -GtkWidget-text-handle-height: 20;
@@ -1346,7 +1347,7 @@ levelbar block {
 scale {
   min-height: 10px;
   min-width: 10px;
-  padding: 12px; }
+  padding: 6px; }
   scale fill, scale trough {
     border: 1px solid #909090;
     border-radius: 0;
@@ -1358,7 +1359,7 @@ scale {
       scale fill:disabled:backdrop, scale trough:disabled:backdrop {
         border-color: shade(#909090, 0.8); }
     scale fill:backdrop, scale trough:backdrop {
-        border-color: shade(#909090, 0.8); }
+        border-color: shade(#909090, 0.9); }
   scale highlight {
     background-color: #308cc6; }
     scale highlight:backdrop {
@@ -1722,7 +1723,7 @@ spinner {
       opacity: 0.5; }
 
 statusbar {
-  padding: 4px;
+  padding: 2px;
   color: #e0e0e0; }
   statusbar frame > border {
     border: none; }
@@ -2402,7 +2403,7 @@ tooltip {
   tooltip.background {
     border-width: 1px;
     border-style: solid;
-    border-color: shade(#f0f0f0, 0.8);
+    border-color: shade(#f0f0f0, 0.7);
     background-color: #606060; }
     tooltip.background label {
       padding: 1px; }
@@ -2778,9 +2779,11 @@ button.destructive-action {
   background-color: #d14235; 
 }
   button.destructive-action:hover {
-    background-color: shade(#d14235, 1.1); }
+    border-color: shade(#d14235, 1.35);
+    background-color: shade(#d14235, 1.05); }
   button.destructive-action:active {
-    background-color: shade(#d14235, 1.2); }
+    border-color: shade(#d14235, 1.4);
+    background-color: shade(#d14235, 1.1); }
   button.destructive-action:backdrop {
     border-color: shade(#d14235, 1.1);
     color: shade(#e0e0e0, 0.9);
