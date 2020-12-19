@@ -1,6 +1,7 @@
 /*
-0.8 - statusbar height
-0.2 - treeview header button
+0.9 treeview progressbar
+0.8 statusbar height
+0.2 treeview header button
 
 hover color - e2eff7  cfe7ff  caeaff  c5e5f5  308cc6
 red  ff5b5e  ff413b ? ff5b60
@@ -603,27 +604,34 @@ list {
         background-color: shade(#308cc6, 0.9); }
   list separator, list separator:backdrop {
     background: none; }
+    
 /*
 .frame, frame > border {
   border-width: 1px;
   border-style: solid;
-  border-color: shade(#909090, 0.9);
+  border-color: shade(#909090, 0.6);
   border-radius: 0;
   box-shadow: none;
   background: none; }
+
+  border: 1px solid shade(#404040, 0.8); 
  */ 
-frame > border,
-.frame {
+.frame  {
+  border: 1px solid shade(#909090, 0.6); 
+}
+frame > border {
   margin: 0;
   padding: 0;
-  border-radius: 0;
   border: 1px solid shade(#404040, 0.8); 
+  border-radius: 0;
   color: shade(#e0e0e0, 0.9);
 }
-  
-
 frame.flat > border, frame > border.flat, .frame.flat {
   border-style: none; }
+
+scrolledwindow viewport.frame {
+  border: none; }
+ 
 
 iconview:selected, iconview:selected:focus, iconview text:selected, iconview text selection, iconview text:selected:focus, iconview text selection:focus {
   border-width: 1px;
@@ -818,9 +826,6 @@ image {
 .caja-location-entry {
   padding: 3px 5px; }
 
-scrolledwindow viewport.frame {
-  border: none; }
-
 arrow, combobox arrow {
   color: alpha(currentColor, 0.75);
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
@@ -857,8 +862,8 @@ button.circular, button.circular-button {
   -gtk-outline-radius: 50%; }
 
 stackswitcher button.circular, stackswitcher button.text-button.circular {
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 30px;
+  min-height: 30px;
   padding: 0; }
 
 printdialog paper {
@@ -868,7 +873,7 @@ printdialog paper {
 
 filechooser #pathbarbox {
   background-color: #404040;
-  border-bottom: 1px solid shade(#909090, 0.9); 
+  border-bottom: 1px solid shade(#909090, 0.8); 
 }
 filechooser .search-bar {
   background-color: #404040; 
@@ -1030,12 +1035,13 @@ padding: 1px 6px; - Geany - tabs is narrow
 notebook {
   padding: 0; }
   notebook.frame {
-    margin: -1px;
+    /*margin: -1px;*/
     border-width: 1px;
     border-style: solid;
     border-color: shade(#909090, 0.8); }
     notebook.frame > header {
-      margin: -1px; }
+      margin: -1px; 
+      }
       notebook.frame > header.top {
         margin-bottom: 0; }
       notebook.frame > header.bottom {
@@ -1104,7 +1110,7 @@ notebook {
 
      notebook > header.top > tabs > tab {
         border-bottom: transparent;
-        margin-top: 3px;  /* offset relative to checked */
+        margin-top: 4px;  /* offset relative to checked */
 	 }
         notebook > header.top > tabs > tab:checked {
             margin-top: 1px;
@@ -1119,30 +1125,30 @@ notebook {
 	    }
 
     notebook > header.bottom {
-      padding-bottom: 1px;
       /*box-shadow: 0 -1px shade(#404040, 0.9); */
       border-top: 1px solid #909090;
       }
       notebook > header.bottom > tabs > tab {
         border-top: transparent;
-        margin-bottom: 3px; 
+        margin-bottom: 4px; 
 	}
         notebook > header.bottom > tabs > tab:checked {
           margin-bottom: 1px;
           margin-top: -1px; 
+            padding-top: 6px;   
             border-bottom-width: 3px;
             border-style: solid;
             border-bottom-color: #308cc6;
 		}
         
     notebook > header.right {
-      padding-right: 1px;
       /*box-shadow: -1px 0 shade(#404040, 0.9); */
       border-left: 1px solid #909090;
       }
       notebook > header.right > tabs > tab {
+        padding-bottom: 4px;
         border-left: none;
-        margin-right: 3px; 
+        margin-right: 4px; 
         }
         notebook > header.right > tabs > tab:checked {
           margin-right: 1px;
@@ -1153,13 +1159,13 @@ notebook {
           }
           
     notebook > header.left {
-      padding-left: 1px;
       /*box-shadow: 1px 0 shade(#404040, 0.9); */
       border-right: 1px solid #909090;
       }
       notebook > header.left > tabs > tab {
+        padding-bottom: 4px;
         border-right: none;
-        margin-left: 3px; }
+        margin-left: 4px; }
         notebook > header.left > tabs > tab:checked {
           margin-left: 1px;
           margin-right: -1px; 
@@ -1308,22 +1314,20 @@ treeview.view.progressbar, treeview.view.progressbar:disabled {
   color: #e0e0e0;
   border-radius: 0;
   background-color: #2e913b; }
-treeview.view.progressbar:focus, treeview.view.progressbar:selected:focus, treeview.view.progressbar:focus:selected, treeview.view.progressbar:focus:selected:focus, treeview.view.progressbar:disabled:selected {
-  border-radius: 0;
-  color: #308cc6;
+treeview.view.progressbar:focus, treeview.view.progressbar:selected:focus, treeview.view.progressbar:focus:selected, 
+treeview.view.progressbar:focus:selected:focus, treeview.view.progressbar:disabled:selected {
   background-color: #2e913b; }
 treeview.view.trough {
   color: #e0e0e0;
-  background-color: alpha(black, 0.5);
+  background-color: shade(#404040, 0.8);
   border-radius: 0;
-  border: none; }
+  border: 1px solid #909090; }
   treeview.view.trough:selected, treeview.view.trough:selected:focus {
     color: #f0f0f0;
-    background-color: alpha(black, 0.5);
-    border-radius: 0;
-    border: none; }
+    background-color: shade(#404040, 0.8);
+     }
 infobar treeview.view trough, row:selected treeview.view trough {
-  background-color: alpha(black, 0.5); }
+  background-color: shade(#404040, 0.8); }
 
 levelbar trough {
   padding: 1px;
@@ -1507,7 +1511,7 @@ scrollbar {
     background-color: shade(#404040, 1.6); 
   }
   scrollbar button, scrollbar button:backdrop, scrollbar button:disabled, scrollbar button:disabled:backdrop {
-    padding: 3px;	/* #MD arrow in button - extend button*/
+    padding: 3px;	/* arrow in button - extend button*/
     border-color: #404040;
     background-image: none;
     background-color: #404040; 
@@ -1854,7 +1858,11 @@ colorchooser #add-color-button {
 
 headerbar, headerbar:not(.titlebar) {
   padding: 4px 8px;
-  border: none;
+  /*border: none;*/
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-radius: 0;
+  border-color: shade(#909090, 0.6);
   color: #e0e0e0;
   background-color: #404040; 
 }
@@ -2018,7 +2026,7 @@ toolbar {
   padding: 4px;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-color: shade(#909090, 0.7);
+  border-color: shade(#909090, 0.6);
   color: #e0e0e0;
   background-color: #404040; }
   .primary-toolbar:backdrop {
@@ -2083,10 +2091,10 @@ toolbar {
       background-color: #404040; }
 
 .inline-toolbar {
-  padding: 1px;
+  padding: 4px;
   border-width: 1px;
   border-style: solid;
-  border-color: #909090;
+  border-color: shade(#909090, 0.7);
   border-radius: 0;
   background-color: #404040; }
   .inline-toolbar:backdrop {
@@ -2094,6 +2102,7 @@ toolbar {
     background-color: #404040; 
    }
   .inline-toolbar toolbutton > button {
+    margin: 0;
     padding: 3px;
     border-style: solid;
     border-width: 1px;
@@ -2445,6 +2454,7 @@ treeview {
     border-radius: 0;
     border-style: solid;
     border-width: 0 1px 1px 0;
+    border-color: shade(#909090, 0.8);
     background-image: none;
     color: shade(#e0e0e0, 0.9);
     background-color: #404040; 
@@ -2536,7 +2546,7 @@ filechooser .sidebar, .nautilus-window .sidebar, .nemo-window .sidebar {
   -NemoPlacesTreeView-disk-full-fg-color: #308cc6;
   -GtkTreeView-vertical-separator: 3; 
 }
-
+    
 .caja-navigation-window .caja-side-pane {
   background-color: #272d3a; }
   .caja-navigation-window .caja-side-pane .view:not(:selected), .caja-navigation-window .caja-side-pane iconview {
@@ -2621,7 +2631,7 @@ actionbar {
   actionbar button.text-button {
     padding: 4px; }
   actionbar button .image-button {
-    padding: 6px; }
+    padding: 4px; }
   actionbar .title {
     font-weight: bold;
     padding: 0 12px; }
@@ -2691,7 +2701,7 @@ searchbar {
   background-color: #404040;
   color: #e0e0e0; }
   .osd toolbar button, toolbar.osd button {
-    padding: 2px 4px;
+    padding: 4px;
     border-width: 1px;
     border-style: solid;
     border-color: #909090;
@@ -2885,11 +2895,6 @@ decoration window:not(menu):backdrop {
 
 /*
 Window header with buttons
-
-.titlebar {
-  border-bottom: none;
-  border-radius: 0px; 
-}
 */
 .titlebar {
   border-bottom: none;
@@ -2977,7 +2982,7 @@ Window header with buttons
   padding: 2px 4px;
   color: #e0e0e0;
   background-color: #404040;
-  border-bottom: 1px solid shade(#909090, 0.7); 
+  border-bottom: 1px solid shade(#909090, 0.6); 
 }
   .titlebar headerbar, .titlebar:not(headerbar) headerbar, headerbar.default-decoration headerbar, 
   .csd headerbar.default-decoration headerbar, .default-decoration.titlebar:not(headerbar) headerbar, 
@@ -3004,7 +3009,7 @@ messagedialog .titlebar.horizontal {
   background-color: #404040; }
 messagedialog.csd .dialog-action-area button {
   margin: 0;
-  padding: 10px; 
+  padding: 6px; 
   border-radius: 0;
   border-bottom-style: none;
   -gtk-outline-radius: 0; }
