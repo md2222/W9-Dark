@@ -1,9 +1,29 @@
 # name: W9-Dark
-# version: 0.7
+# version: 0.10  Gtk2 scale
 # author: MD
 # date: 14.12.2020
 
-gtk-color-scheme	= "bg_color:#404040\nfg_color:#e0e0e0\nbase_color:#272d3a\ntext_color:#e0e0e0\ninsensitive_base_color:#333333\nselected_bg_color:#308cc6\nselected_fg_color:#f0f0f0\ninsensitive_bg_color:#404040\ntooltip_bg_color:#606060\ntooltip_fg_color:#e7e7e7"
+#gtk-color-scheme	= "bg_color:#404040\nfg_color:#e0e0e0\nbase_color:#272d3a\ntext_color:#e0e0e0\ninsensitive_base_color:#333333\nselected_bg_color:#308cc6\nselected_fg_color:#f0f0f0\ninsensitive_bg_color:#404040\ntooltip_bg_color:#606060\ntooltip_fg_color:#e7e7e7"
+
+# Text/base
+gtk-color-scheme = "base_color:#272d3a\ntext_color:#e0e0e0\ninsensitive_base_color:#333333"
+# Foreground/background
+gtk-color-scheme = "bg_color:#404040\nfg_color:#e0e0e0"
+# Selected foreground/background
+gtk-color-scheme = "selected_bg_color:#308cc6\nselected_fg_color:#f0f0f0"
+# Insensitive foreground/background
+gtk-color-scheme = "insensitive_fg_color:#d0d0d0\ninsensitive_bg_color:#404040"
+# Menus
+gtk-color-scheme = "menu_color:#404040"
+# Links
+gtk-color-scheme = "link_color:#00aaff\nvisited_link_color:#0091d9"
+# Treeview headers
+gtk-color-scheme = "column_header_color:#404040\nhover_column_header_color:#474747"
+# Window decoration
+gtk-color-scheme = "window_color:#404040"
+# Tooltips
+gtk-color-scheme = "tooltip_bg_color:#606060\ntooltip_fg_color:#e7e7e7"
+
 
 gtk-icon-sizes = "gtk-button=16,16" # This makes button icons smaller.
 gtk-auto-mnemonics = 1  # Disables ugly lines under menu items
@@ -21,7 +41,7 @@ style "default"
 	# Style Properties
 
 	GtkWidget::focus-line-width	= 1
-  GtkWidget::focus-line-pattern = "\1\2"
+    GtkWidget::focus-line-pattern = "\1\2"
 	GtkMenuBar::window-dragging	= 1
 	GtkToolbar::window-dragging	= 1
 	GtkToolbar::internal-padding	= 4
@@ -31,7 +51,13 @@ style "default"
     GtkWidget::tooltip-alpha        = 220
     GtkWidget::new-tooltip-style    = 1 #for compatibility
 
-  GtkWidget::link-color              = "#00aaff"
+  GtkWidget::link-color              = @link_color
+  GtkWidget::visited-link-color      = @visited_link_color
+  GnomeHRef::link_color              = @link_color
+  GtkHTML::link-color                = @link_color
+  GtkHTML::vlink-color               = @visited_link_color
+  GtkIMHtml::hyperlink-color         = @link_color
+  GtkIMHtml::hyperlink-visited-color = @visited_link_color
 
 	GtkSeparatorMenuItem::horizontal-padding = 3
     GtkSeparatorMenuItem::wide-separators    = 1
@@ -43,31 +69,32 @@ style "default"
     #GtkButton::inner-border           = {4, 4, 4, 4}  # увеличивает размер
 
     GtkEntry::state-hint  = 1
+    #GtkEntry::inner-border = {7, 7, 4, 5}
 
 	GtkRange::trough-border		= 0
-	GtkRange::slider-width		= 14
-	GtkRange::stepper-size		= 5
-	GtkRange::stepper-spacing   = 0
-	GtkRange::arrow-scaling     = 0.25
-    #GtkRange::activate-slider   = 1
+	GtkRange::slider-width		= 13
+	GtkRange::stepper-size		= 0
+	#GtkRange::stepper-spacing   = 0
+	#GtkRange::arrow-scaling     = 0.25
+    GtkRange::activate-slider   = 1
 
+	GtkScrollbar::activate-slider	            = 1
+	GtkScrollbar::stepper-size	                = 13
 	GtkScrollbar::trough-border	= 0
     GtkScrollbar::slider-width = 15
-	GtkScrollbar::activate-slider	            = 1
 	GtkScrollbar::has-backward-stepper		    = 1  
 	GtkScrollbar::has-forward-stepper		    = 1
-	GtkScrollbar::stepper-size	                = 13
     GtkScrollbar::min-slider-length             = 32
 	GtkScrolledWindow ::scrollbar-spacing		= 0
 	GtkScrolledWindow ::scrollbars-within-bevel	= 1
 
-	GtkHScale::slider_length 	= 11
-	GtkHScale::slider_width 	= 19
-	GtkVScale::slider_length 	= 11
-	GtkVScale::slider_width 	= 19
-    #GtkScale::slider_length = 19
-    #GtkScale::slider_width = 19
-    #GtkScale::trough-side-details = 1
+	#GtkHScale::slider_length 	= 11
+	#GtkHScale::slider_width 	= 19
+	#GtkVScale::slider_length 	= 11
+	#GtkVScale::slider_width 	= 19
+    GtkScale::slider_length = 11
+    GtkScale::slider_width = 24
+    GtkScale::trough-side-details = 1
     
   GtkProgressBar::min-horizontal-bar-height = 6
   GtkProgressBar::min-vertical-bar-width = 6
@@ -81,7 +108,6 @@ style "default"
 	GtkMenuBar::internal-padding	= 0	#( every window is misaligned for the sake of menus ):
 	GtkMenu::horizontal-padding	= 0
 	GtkMenu::vertical-padding	= 2
-
   GtkMenu::double-arrows       = 0
   GtkMenuItem::arrow-scaling   = 1
   GtkMenuItem::toggle-spacing  = 10
@@ -134,7 +160,7 @@ style "default"
 
   # Draw frame around menu in a non-compositied environment
   # This needs to go before pixmap because we need to override some stuff
-  #engine "adwaita" {}
+  engine "adwaita" {}
 
 	engine "pixmap"
 	{
@@ -671,7 +697,7 @@ style "scrollbar"
       orientation		= VERTICAL
     }
 
-# Sliders
+    # Sliders
 
     image 
     {
@@ -716,7 +742,7 @@ style "scrollbar"
       orientation		= HORIZONTAL
     }
 
-# X Verticals
+    # X Verticals
 
     image 
     {
@@ -834,6 +860,7 @@ style "menu_item"
       stretch = TRUE
     }
 
+ 	###################################
     # Fix invisible scale trough on selected menuitems
 
     image {
@@ -856,6 +883,7 @@ style "menu_item"
       orientation = HORIZONTAL
     }
 
+	###################################
 	# Check Buttons
 
     image {
@@ -930,6 +958,7 @@ style "menu_item"
       overlay_stretch = FALSE
     }
 
+	###################################
 	# Radio Buttons
 
 	image 
@@ -1011,6 +1040,7 @@ style "menu_item"
 		stretch     = TRUE
   	}
 
+	###################################
 	# Arrow Buttons
 
 	image
@@ -1326,6 +1356,7 @@ style "combobox_entry"
         direction       = LTR
     }
 
+	###################################
     # RTL version
 
 	image
@@ -1415,6 +1446,7 @@ style "combobox_entry_button"
         direction       = LTR
     }
 
+	###################################
     # RTL version
 
 	image
@@ -1478,7 +1510,7 @@ style "spinbutton"
 {
   bg[NORMAL] = @bg_color
 
-  xthickness	= 3
+  xthickness	= 2
   ythickness	= 3
 
   engine "pixmap"
@@ -1488,7 +1520,9 @@ style "spinbutton"
       function			= ARROW
     }
 
+	###################################
     # Spin-Up LTR
+    
     image
     {
       function			= BOX
@@ -1538,7 +1572,9 @@ style "spinbutton"
       direction                 = LTR
     }
 
+	###################################
     # Spin-Up RTL
+    
     image
     {
       function			= BOX
@@ -1588,7 +1624,9 @@ style "spinbutton"
       direction                 = RTL
     }
 
+	###################################
     # Spin-Down LTR
+    
     image
     {
       function			= BOX
@@ -1638,7 +1676,9 @@ style "spinbutton"
       direction                 = LTR
     }
 
+	###################################
     # Spin-Down RTL
+    
     image
     {
       function			= BOX
@@ -1780,27 +1820,27 @@ style "gimp_spin_scale"
 
 style "libreoffice_entry"
 {
-        engine "pixmap"
-        {
+    engine "pixmap"
+    {
         image
         {
-                function                = FLAT_BOX
-                detail                  = "entry_bg"
-                state                   = NORMAL
-                overlay_file		= "Entry/entry-border-fill-solid.png"
-	        overlay_border		= { 0, 0, 0, 0 }
-                overlay_stretch         = TRUE
+            function                = FLAT_BOX
+            detail                  = "entry_bg"
+            state                   = NORMAL
+            overlay_file		= "Entry/entry-border-fill-solid.png"
+            overlay_border		= { 0, 0, 0, 0 }
+            overlay_stretch         = TRUE
         }
         image
         {
-                function                = FLAT_BOX
-                detail                  = "entry_bg"
-                state                   = ACTIVE
-                overlay_file		= "Entry/entry-border-fill-solid.png"
-	        overlay_border		= { 0, 0, 0, 0 }
-                overlay_stretch         = TRUE
+        function                = FLAT_BOX
+        detail                  = "entry_bg"
+        state                   = ACTIVE
+        overlay_file		= "Entry/entry-border-fill-solid.png"
+        overlay_border		= { 0, 0, 0, 0 }
+        overlay_stretch         = TRUE
         }
-        }
+    }
 }
 
 
@@ -1882,7 +1922,7 @@ style "notebook"
         gap_side		= LEFT
     }
 
-# How to draw boxes with a gap on one side (ie the page of a notebook)
+  # How to draw boxes with a gap on one side (ie the page of a notebook)
 
     image 
     {
@@ -1925,7 +1965,7 @@ style "notebook"
         gap_side			= RIGHT
     }
 
-# How to draw the box of a notebook when it isnt attached to a tab
+  # How to draw the box of a notebook when it isnt attached to a tab
 
     image 
     {
@@ -1992,95 +2032,97 @@ style "range"
 {	
   engine "pixmap" 
   {
-    image 
-    {
-      function			= BOX
-      detail			= "trough"
-      file			= "Range/trough-horizontal.png"
-      border			= { 4, 4, 0, 0 }
-      stretch			= TRUE
-      orientation		= HORIZONTAL
-    }	
-    image 
-    {
-      function			= BOX
-      detail			= "trough"
-      file			= "Range/trough-vertical.png"
-      border			= { 0, 0, 4, 4 }
-      stretch			= TRUE
-      orientation		= VERTICAL
+   image {
+      function = BOX
+      detail = "trough-upper"
+      file = "Range/trough-horizontal.png"
+      border = { 6, 6, 0, 0 }
+      stretch = TRUE
+      orientation = HORIZONTAL
     }
 
+    image {
+      function = BOX
+      detail = "trough-lower"
+      file = "Range/trough-horizontal-active.png"
+      border = { 6, 6, 0, 0 }
+      stretch = TRUE
+      orientation = HORIZONTAL
+    }
+
+    image {
+      function = BOX
+      detail = "trough-upper"
+      file = "Range/trough-vertical.png"
+      border = { 0, 0, 6, 6 }
+      stretch = TRUE
+      orientation = VERTICAL
+    }
+
+    image {
+      function = BOX
+      detail = "trough-lower"
+      file = "Range/trough-vertical-active.png"
+      border = { 0, 0, 6, 6 }
+      stretch = TRUE
+      orientation = VERTICAL
+    }
+
+	###################################
     # Horizontal
 
-    image 
-    {
-      function				= SLIDER
-      state           			= NORMAL
-      file				= "Others/null.png"
-      border				= { 0, 0, 0, 0 }
-      stretch				= TRUE
-      overlay_file			= "Range/slider-horiz.png"
-      overlay_stretch			= FALSE
-      orientation			= HORIZONTAL
+    image {
+      function = SLIDER
+      state    = NORMAL
+      detail   = "hscale"
+      file     = "Range/slider-horiz.png"
     }
-    image 
-    {
-      function				= SLIDER
-      state           			= PRELIGHT
-      file				= "Others/null.png"
-      border				= { 0, 0, 0, 0 }
-      stretch				= TRUE
-      overlay_file			= "Range/slider-horiz-prelight.png"
-      overlay_stretch			= FALSE
-      orientation			= HORIZONTAL
+    image {
+      function = SLIDER
+      state    = PRELIGHT
+      detail   = "hscale"
+      file     = "Range/slider-horiz-prelight.png"
     }
-    image 
-    {
-      function				= SLIDER
-      state           			= INSENSITIVE
-      file				= "Others/null.png"
-      border				= { 0, 0, 0, 0 }
-      stretch				= TRUE
-      overlay_file			= "Range/slider-horiz.png"
-      overlay_stretch			= FALSE
-      orientation			= HORIZONTAL
+    image {
+      function = SLIDER
+      state    = ACTIVE
+      detail   = "hscale"
+      file     = "Range/slider-horiz-prelight.png"
     }
+    image {
+      function = SLIDER
+      state    = INSENSITIVE
+      detail   = "hscale"
+      file     = "Range/slider-horiz.png"
+    }
+    
 
+	###################################
     # Vertical
 
-    image 
-    {
-      function				= SLIDER
-      state           			= NORMAL
-      file				= "Others/null.png"
-      border				= { 0, 0, 0, 0 }
-      stretch				= TRUE
-      overlay_file			= "Range/slider-vert.png"
-      overlay_stretch			= FALSE
-      orientation			= VERTICAL
+    image {
+      function = SLIDER
+      state    = NORMAL
+      detail   = "vscale"
+      file     = "Range/slider-vert.png"
     }
-    image 
-    {
-      function				= SLIDER
-      state           			= PRELIGHT
-      file				= "Others/null.png"
-      border				= { 0, 0, 0, 0 }
-      stretch				= TRUE
-      overlay_file			= "Range/slider-vert-prelight.png"
-      overlay_stretch			= FALSE
-      orientation			= VERTICAL
+    image {
+      function = SLIDER
+      state    = PRELIGHT
+      detail   = "vscale"
+      file     = "Range/slider-vert-prelight.png"
     }
-    image 
-    {
-      function				= SLIDER
-      state           			= INSENSITIVE
-      file				= "Others/null.png"
-      border				= { 0, 0, 0, 0 }
-      stretch				= TRUE
-      overlay_file			= "Range/slider-vert.png"
-      overlay_stretch			= FALSE
-      orientation			= VERTICAL
+    image {
+      function = SLIDER
+      state    = ACTIVE
+      detail   = "vscale"
+      file     = "Range/slider-vert-prelight.png"
+    }
+    image {
+      function = SLIDER
+      state    = INSENSITIVE
+      detail   = "vscale"
+      file     = "Range/slider-vert.png"
     }
 
     # Function below removes ugly boxes
@@ -2090,6 +2132,53 @@ style "range"
 	file        		= "Others/null.png"
 	border      		= { 3, 3, 3, 3 }
 	stretch         	= TRUE
+    }
+  }
+}
+
+
+style "scale_horz" {
+
+  engine "pixmap" {
+
+    image {
+      function    = BOX
+      detail      = "trough-upper"
+      file = "Range/trough-horizontal.png"
+      border      = {6, 6, 0, 0}
+      stretch     = TRUE
+    }
+
+    image {
+      function    = BOX
+      detail      = "trough-lower"
+      file = "Range/trough-horizontal-active.png"
+      border      = {6, 6, 0, 0}
+      stretch     = TRUE
+    }
+
+  }
+
+}
+
+style "scale_vert" {
+
+  engine "pixmap" {
+
+    image {
+      function    = BOX
+      detail      = "trough-upper"
+      file = "Range/trough-vertical.png"
+      border      = {0, 0, 6, 6}
+      stretch     = TRUE
+    }
+
+    image {
+      function    = BOX
+      detail      = "trough-lower"
+      file = "Range/trough-vertical-active.png"
+      border      = {0, 0, 6, 6}
+      stretch     = TRUE
     }
 
   }
@@ -2171,17 +2260,17 @@ style "treeview_header"
 
 style "scrolled_window"
 {
-        xthickness      = 1
-        ythickness      = 1
+    xthickness      = 1
+    ythickness      = 1
 
     engine "pixmap"
 	{
         image
         {
-                function		= SHADOW
-                file			= "Shadows/frame.png"				
-                border			= { 5, 5, 5, 5 }
-                stretch			= TRUE
+            function		= SHADOW
+            file			= "Shadows/frame.png"				
+            border			= { 5, 5, 5, 5 }
+            stretch			= TRUE
         }
     }
 }
@@ -2189,141 +2278,141 @@ style "scrolled_window"
 
 style "frame"
 {
-        xthickness = 1
-        ythickness = 1
+    xthickness = 1
+    ythickness = 1
 
     engine "pixmap"
 	{
         image
         {
-                function                = SHADOW
-                file                    = "Shadows/frame.png"
-                border                  = { 1, 1, 1, 1 }
-                stretch                 = TRUE
-                shadow                  = IN
+            function                = SHADOW
+            file                    = "Shadows/frame.png"
+            border                  = { 1, 1, 1, 1 }
+            stretch                 = TRUE
+            shadow                  = IN
         }
         image
         {
-                function                = SHADOW_GAP
-                file                    = "Shadows/frame.png"
-                border                  = { 1, 1, 1, 1 }
-                stretch                 = TRUE
-                gap_start_file          = "Shadows/frame-gap-start.png"
-                gap_start_border        = { 1, 0, 0, 0 }
-                gap_end_file            = "Shadows/frame-gap-end.png"
-                gap_end_border          = { 0, 1, 0, 0 }
-                shadow                  = IN
+            function                = SHADOW_GAP
+            file                    = "Shadows/frame.png"
+            border                  = { 1, 1, 1, 1 }
+            stretch                 = TRUE
+            gap_start_file          = "Shadows/frame-gap-start.png"
+            gap_start_border        = { 1, 0, 0, 0 }
+            gap_end_file            = "Shadows/frame-gap-end.png"
+            gap_end_border          = { 0, 1, 0, 0 }
+            shadow                  = IN
         }
         
         image
         {
-                function                = SHADOW
-                file                    = "Shadows/frame.png"
-                border                  = { 1, 1, 1, 1 }
-                stretch                 = TRUE
-                shadow                  = OUT
+            function                = SHADOW
+            file                    = "Shadows/frame.png"
+            border                  = { 1, 1, 1, 1 }
+            stretch                 = TRUE
+            shadow                  = OUT
         }
         image
         {
-                function                = SHADOW_GAP
-                file                    = "Shadows/frame.png"
-                border                  = { 1, 1, 1, 1 }
-                stretch                 = TRUE
-                gap_start_file          = "Shadows/frame-gap-start.png"
-                gap_start_border        = { 1, 0, 0, 0 }
-                gap_end_file            = "Shadows/frame-gap-end.png"
-                gap_end_border          = { 0, 1, 0, 0 }
-                shadow                  = OUT
+            function                = SHADOW_GAP
+            file                    = "Shadows/frame.png"
+            border                  = { 1, 1, 1, 1 }
+            stretch                 = TRUE
+            gap_start_file          = "Shadows/frame-gap-start.png"
+            gap_start_border        = { 1, 0, 0, 0 }
+            gap_end_file            = "Shadows/frame-gap-end.png"
+            gap_end_border          = { 0, 1, 0, 0 }
+            shadow                  = OUT
         }
         
         image
         {
-                function                = SHADOW
-                file                    = "Shadows/frame.png"
-                border			= { 1, 1, 1, 1 }
-                stretch                 = TRUE
-                shadow                  = ETCHED_IN
+            function                = SHADOW
+            file                    = "Shadows/frame.png"
+            border			= { 1, 1, 1, 1 }
+            stretch                 = TRUE
+            shadow                  = ETCHED_IN
         }
         image
         {
-                function                = SHADOW_GAP
-                file                    = "Shadows/frame.png"
-                border                  = { 1, 1, 1, 1 }
-                stretch                 = TRUE
-                gap_start_file          = "Shadows/frame-gap-start.png"
-                gap_start_border        = { 1, 0, 0, 0 }
-                gap_end_file            = "Shadows/frame-gap-end.png"
-                gap_end_border          = { 0, 1, 0, 0 }
-                shadow                  = ETCHED_IN
+            function                = SHADOW_GAP
+            file                    = "Shadows/frame.png"
+            border                  = { 1, 1, 1, 1 }
+            stretch                 = TRUE
+            gap_start_file          = "Shadows/frame-gap-start.png"
+            gap_start_border        = { 1, 0, 0, 0 }
+            gap_end_file            = "Shadows/frame-gap-end.png"
+            gap_end_border          = { 0, 1, 0, 0 }
+            shadow                  = ETCHED_IN
         }
         
         image
         {
-                function                = SHADOW
-                file                    = "Shadows/frame.png"
-                border                  = { 1, 1, 1, 1 }
-                stretch                 = TRUE
-                shadow                  = ETCHED_OUT
+            function                = SHADOW
+            file                    = "Shadows/frame.png"
+            border                  = { 1, 1, 1, 1 }
+            stretch                 = TRUE
+            shadow                  = ETCHED_OUT
         }
         image
         {
-                function                = SHADOW_GAP
-                file                    = "Shadows/frame.png"
-                border                  = { 1, 1, 1, 1 }
-                stretch                 = TRUE
-                gap_start_file          = "Shadows/frame-gap-start.png"
-                gap_start_border        = { 1, 0, 0, 0 }
-                gap_end_file            = "Shadows/frame-gap-end.png"
-                gap_end_border          = { 0, 1, 0, 0 }
-                shadow                  = ETCHED_OUT
+            function                = SHADOW_GAP
+            file                    = "Shadows/frame.png"
+            border                  = { 1, 1, 1, 1 }
+            stretch                 = TRUE
+            gap_start_file          = "Shadows/frame-gap-start.png"
+            gap_start_border        = { 1, 0, 0, 0 }
+            gap_end_file            = "Shadows/frame-gap-end.png"
+            gap_end_border          = { 0, 1, 0, 0 }
+            shadow                  = ETCHED_OUT
         }
-        }
+    }
 }
 
 
 style "gimp_toolbox_frame"
 {
-        engine "pixmap"
+    engine "pixmap"
 	{
         image
         {
-                function		= SHADOW
+            function		= SHADOW
         }
-        }
+    }
 }
 
 
 style "toolbar"
 {
-        engine "pixmap"
+    engine "pixmap"
 	{
         image
         {
-                function		= SHADOW
+            function		= SHADOW
         }
-        }
+    }
 }
 
 
 style "inline_toolbar"
 {
-        GtkToolbar::button-relief       = GTK_RELIEF_NORMAL
+    GtkToolbar::button-relief       = GTK_RELIEF_NORMAL
 
-        engine "pixmap"
-        {
+    engine "pixmap"
+    {
         image
         {
-                function                = BOX
-                file                    = "Toolbar/inline-toolbar.png"
-                stretch                 = TRUE
+            function                = BOX
+            file                    = "Toolbar/inline-toolbar.png"
+            stretch                 = TRUE
         }
-        }
+    }
 }
 
 
 style "notebook_viewport"
 {
-        bg[NORMAL]   = @base_color
+    bg[NORMAL]   = @base_color
 }
 
 
@@ -2372,7 +2461,7 @@ style "chrome-gtk-frame"
 
 style "chrome_menu_item"
 {
-        bg[SELECTED] = @selected_bg_color
+    bg[SELECTED] = @selected_bg_color
 }
 
 
@@ -2403,6 +2492,8 @@ class "GtkOldEditable" 			style "entry"
 class "GtkSpinButton"   	 	style "spinbutton"
 class "GtkNotebook"      		style "notebook"
 class "GtkRange"         		style "range"
+class "GtkHScale"               style "scale_horz"
+class "GtkVScale"               style "scale_vert"
 class "GtkProgressBar"          style "progressbar"
 class "GtkSeparatorMenuItem"		style "separator_menu_item"
 class "GtkScrolledWindow"		style "scrolled_window"
