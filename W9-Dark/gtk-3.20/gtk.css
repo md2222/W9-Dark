@@ -1,4 +1,5 @@
 /*
+0.11 spinbutton entry, nemo, cinnamon
 0.10  Gtk2 scale
 0.9 treeview progressbar
 0.8 statusbar height
@@ -462,7 +463,7 @@ calendar {
     color: #308cc6; }
 
 entry {
-  padding: 4px 3px;
+  padding: 4px;
   border-width: 1px;
   border-style: solid;
   border-color: #909090;
@@ -501,7 +502,7 @@ entry {
   }
   entry.flat, entry.flat:focus {
     min-height: 0;
-    padding: 3px;
+    padding: 4px;
     border-radius: 0;
     background-image: none;
     border-color: transparent; }
@@ -1684,7 +1685,7 @@ spinbutton.horizontal {
     border-color: #308cc6; }
   spinbutton.horizontal entry {
     border: none;
-    padding: 7px 15px; }
+    padding: 4px 5px; }
   spinbutton.horizontal button {
     border-width: 0;
     border-radius: 0;
@@ -2504,10 +2505,10 @@ treeview {
 
 filechooser.csd.background, filechooser placessidebar list, .nautilus-window.csd.background, .nautilus-window placessidebar list, 
 .nemo-window.csd.background, .nemo-window placessidebar list {
-  background-color: shade(#404040, 1.1); 
+  background-color: shade(#404040, 0.9); 
 }
 filechooser .sidebar, .nautilus-window .sidebar, .nemo-window .sidebar {
-  background-color: shade(#404040, 1.1); 
+  background-color: shade(#404040, 0.9); 
 }
   filechooser .sidebar .view:not(:selected), filechooser .sidebar iconview, .nautilus-window .sidebar .view:not(:selected), 
   .nautilus-window .sidebar iconview, .nemo-window .sidebar .view:not(:selected), .nemo-window .sidebar iconview {
