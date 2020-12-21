@@ -1,4 +1,5 @@
 /*
+0.12 levelbar
 0.11 spinbutton entry, nemo, cinnamon
 0.10  Gtk2 scale
 0.9 treeview progressbar
@@ -1294,15 +1295,15 @@ progressbar {
     progressbar progress:backdrop {
       background-color: shade(#2e913b, 0.9); }
   progressbar trough {
-    border: 1px solid shade(#909090, 0.8);
+    border: 1px solid shade(#909090, 0.7);
     border-radius: 0px;
     background-color: shade(#404040, 0.8); }
     progressbar trough:backdrop {
       background-color: shade(#404040, 0.8); }
   progressbar.horizontal trough, progressbar.horizontal progress {
-    min-height: 14px; }
+    min-height: 12px; }
   progressbar.vertical trough, progressbar.vertical progress {
-    min-width: 14px; }
+    min-width: 12px; }
 
 treeview.view.progressbar, treeview.view.progressbar:disabled {
   color: #e0e0e0;
@@ -1330,17 +1331,19 @@ levelbar.horizontal.discrete block {
   margin: 0 1px; }
 levelbar.vertical.discrete block {
   margin: 1px 0; }
-levelbar block {
+levelbar block:not(.empty) {
   border: none;
   padding: 2px;
   border-radius: 0px;
   background-color: #308cc6; }
   levelbar block.high {
-    background-color: shade(#2e913b, 0.9); }
+    background-color: #308cc6; }
   levelbar block.low {
-    background-color: shade(#d37f00, 0.9); }
+    background-color: #c6622b; }
+levelbar block.full {
+  background-color: #2e913b; }
   levelbar block.empty {
-    background-color: alpha(black, 0.1); }
+    background-color: shade(#404040, 0.7); }
 
 scale {
   min-height: 15px;
