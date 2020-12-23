@@ -1,5 +1,5 @@
 # name: W9-Dark
-# version: 0.14 Gtk2 scrollbar colors
+# version: 0.15 Gtk2 progressbar like Gtk3
 # author: MD
 # date: 22.12.2020
 
@@ -96,8 +96,8 @@ style "default"
     GtkScale::slider_width = 24
     GtkScale::trough-side-details = 1
     
-  GtkProgressBar::min-horizontal-bar-height = 6
-  GtkProgressBar::min-vertical-bar-width = 6
+  GtkProgressBar::min-horizontal-bar-height = 15
+  GtkProgressBar::min-vertical-bar-width = 15
   GtkProgressBar::xspacing = 4
   GtkProgressBar::yspacing = 4
 
@@ -2197,7 +2197,7 @@ style "progressbar"
     {
       function = BOX
       detail = "trough"
-      file = "assets/trough-progressbar.png"
+      file = "ProgressBar/trough-progressbar.png"
       border = { 4, 4, 4, 4 }
       stretch = TRUE
       orientation = HORIZONTAL
@@ -2206,7 +2206,7 @@ style "progressbar"
     {
       function = BOX
       detail = "bar"
-      file = "assets/progressbar.png"
+      file = "ProgressBar/progressbar.png"
       stretch = TRUE
       border = { 3, 3, 3, 3 }
       orientation = HORIZONTAL
@@ -2216,7 +2216,7 @@ style "progressbar"
     {
       function = BOX
       detail = "trough"
-      file = "assets/trough-progressbar_v.png"
+      file = "ProgressBar/trough-progressbar_v.png"
       border = { 4, 4, 4, 4 }
       stretch = TRUE
       orientation = VERTICAL
@@ -2226,7 +2226,7 @@ style "progressbar"
     {
       function = BOX
       detail = "bar"
-      file = "assets/progressbar_v.png"
+      file = "ProgressBar/progressbar_v.png"
       stretch = TRUE
       border = { 3, 3, 3, 3 }
       orientation = VERTICAL
