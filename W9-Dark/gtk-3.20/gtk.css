@@ -1301,9 +1301,9 @@ progressbar {
     progressbar trough:backdrop {
       background-color: shade(#404040, 0.8); }
   progressbar.horizontal trough, progressbar.horizontal progress {
-    min-height: 12px; }
+    min-height: 14px; }
   progressbar.vertical trough, progressbar.vertical progress {
-    min-width: 12px; }
+    min-width: 14px; }
 
 treeview.view.progressbar, treeview.view.progressbar:disabled {
   color: #e0e0e0;
@@ -2725,7 +2725,7 @@ searchbar {
       color: shade(#e0e0e0, 0.8); 
       background-color: shade(#308cc6, 0.8); }
   .osd toolbar separator, toolbar.osd separator {
-    color: shade(#909090, 0.9); }
+    color: shade(#909090, 0.7); }
 
 .osd scale slider, scale.osd slider {
   background-color: #308cc6; }
@@ -3384,11 +3384,11 @@ read if you used those and something break with a version upgrade you're on your
 @define-color wm_bg_b #404040;
 @define-color wm_shadow alpha(#000000, 0.35);
 @define-color wm_border alpha(#000000, 0.18);
-@define-color wm_button_hover_color_a shade(#404040, 1.3);
+@define-color wm_button_hover_color_a shade(#404040, 1.1);
 @define-color wm_button_hover_color_b #404040;
-@define-color wm_button_active_color_a shade(#404040, 0.85);
-@define-color wm_button_active_color_b shade(#404040, 0.89);
-@define-color wm_button_active_color_c shade(#404040, 0.9);
+@define-color wm_button_active_color_a shade(#404040, 1.1);
+@define-color wm_button_active_color_b shade(#404040, 1.1);
+@define-color wm_button_active_color_c shade(#404040, 1.1);
 @define-color content_view_bg #272d3a;
 /*
 test
