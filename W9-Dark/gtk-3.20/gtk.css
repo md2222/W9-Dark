@@ -1,4 +1,5 @@
 /*
+0.18  levelbar, spinbutton:disabled
 0.17  progressbar height 11px
 0.16  Gtk3 combobox height
 0.12 levelbar
@@ -1302,9 +1303,9 @@ progressbar {
     progressbar progress:backdrop {
       background-color: shade(#2e913b, 0.9); }
   progressbar trough {
-    border: 1px solid shade(#909090, 0.7);
+    border: 1px solid shade(#909090, 0.75);
     border-radius: 0px;
-    background-color: shade(#404040, 0.8); }
+    background-color: shade(#404040, 0.85); }
     progressbar trough:backdrop {
       background-color: shade(#404040, 0.8); }
   progressbar.horizontal trough, progressbar.horizontal progress {
@@ -1331,36 +1332,45 @@ treeview.view.trough {
 infobar treeview.view trough, row:selected treeview.view trough {
   background-color: shade(#404040, 0.8); }
 
+levelbar block {
+  min-width: 32px;
+  min-height: 1px; }
+levelbar.vertical block {
+  min-width: 1px;
+  min-height: 32px; }
 levelbar trough {
-  padding: 1px;
-  border-radius: 0; }
+  border: 1px solid shade(#909090, 0.8);
+  background-color: #404040; }
+levelbar.horizontal.discrete trough {
+  border: none;
+  }
 levelbar.horizontal.discrete block {
-  margin: 0 1px; }
+    border: 1px solid shade(#909090, 0.8);
+  }
 levelbar.vertical.discrete block {
   margin: 1px 0; }
 levelbar block:not(.empty) {
   border: none;
-  padding: 2px;
-  border-radius: 0px;
+  padding-top: 3px;
   background-color: #308cc6; }
-  levelbar block.high {
-    background-color: #308cc6; }
-  levelbar block.low {
-    background-color: #c6622b; }
+levelbar block.low {
+  background-color: #c6622b; }
+levelbar block.high {
+  background-color: #308cc6; }
 levelbar block.full {
   background-color: #2e913b; }
-  levelbar block.empty {
-    background-color: shade(#404040, 0.7); }
+levelbar block.empty {
+  background-color: shade(#404040, 0.8);  }
 
 scale {
   min-height: 15px;
   min-width: 15px;
   padding: 5px; }
   scale fill, scale trough {
-    border: 1px solid #909090;
+    border: 1px solid shade(#909090, 0.9);
     border-radius: 0;
-    background-color: shade(#404040, 0.8);
-    outline-offset: 2px;
+    background-color: shade(#404040, 0.7);
+    outline-offset: 8px;
     -gtk-outline-radius: 0; }
     scale fill:disabled, scale trough:disabled {
         border-color: shade(#909090, 0.8); }
@@ -1369,7 +1379,7 @@ scale {
     scale fill:backdrop, scale trough:backdrop {
         border-color: shade(#909090, 0.9); }
   scale highlight {
-    background-color: shade(#308cc6, 0.9); }
+    background-color: #308cc6; }
     scale highlight:backdrop {
       background-color: shade(#308cc6, 0.9); }
     scale highlight:disabled {
@@ -1687,6 +1697,8 @@ separator {
   combobox separator {
     border: none; }
 
+spinbutton:not(.vertical) entry {
+  min-width: 26px; }
 spinbutton.horizontal {
   border: 1px solid #909090; }
   spinbutton.horizontal:backdrop {
@@ -1719,6 +1731,9 @@ spinbutton.vertical button.down {
   border-top-width: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
+spinbutton:disabled {
+  color: shade(#e0e0e0, 0.8); 
+  border-color: shade(#909090, 0.8); }
 
 @keyframes spin {
   to {
