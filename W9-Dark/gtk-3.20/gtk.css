@@ -1301,9 +1301,9 @@ progressbar {
     progressbar trough:backdrop {
       background-color: shade(#404040, 0.8); }
   progressbar.horizontal trough, progressbar.horizontal progress {
-    min-height: 14px; }
+    min-height: 13px; }
   progressbar.vertical trough, progressbar.vertical progress {
-    min-width: 14px; }
+    min-width: 13px; }
 
 treeview.view.progressbar, treeview.view.progressbar:disabled {
   color: #e0e0e0;
