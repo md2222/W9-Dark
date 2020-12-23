@@ -1500,9 +1500,9 @@ scrollbar {
     background-color: shade(#404040, 0.8); 
   }
   scrollbar button:hover {
-    border-color: shade(#404040, 1.1);
+    border-color: shade(#404040, 1.15);
     background-image: none;
-    background-color: shade(#404040, 1.1); 
+    background-color: shade(#404040, 1.15); 
   }
   scrollbar button:active {
     background-image: none;
@@ -1526,9 +1526,9 @@ scrollbar {
     background-color: shade(#404040, 1.8); 
   }
     scrollbar slider:hover {
-      background-color: shade(#404040, 2.0); }
+      background-color: shade(#404040, 2.1); }
       scrollbar slider:hover:active {
-        background-color: shade(#404040, 2.2); }
+        background-color: shade(#404040, 2.3); }
     scrollbar slider:backdrop {
       background-color: shade(#404040, 1.7); }
     scrollbar slider:disabled {

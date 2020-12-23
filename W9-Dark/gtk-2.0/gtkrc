@@ -1,5 +1,5 @@
 # name: W9-Dark
-# version: 0.13  Entry
+# version: 0.14 Gtk2 scrollbar colors
 # author: MD
 # date: 22.12.2020
 
@@ -81,7 +81,7 @@ style "default"
 	GtkScrollbar::activate-slider	            = 1
 	GtkScrollbar::stepper-size	                = 13
 	GtkScrollbar::trough-border	= 0
-    GtkScrollbar::slider-width = 15
+    GtkScrollbar::slider-width = 13
 	GtkScrollbar::has-backward-stepper		    = 1  
 	GtkScrollbar::has-forward-stepper		    = 1
     GtkScrollbar::min-slider-length             = 32
@@ -749,7 +749,7 @@ style "scrollbar"
       function			= SLIDER
       state           	= NORMAL
       file				= "Scrollbars/slider-vert.png" 
-      border			= { 5, 5, 6, 6 }
+      border			= { 5, 5, 7, 7 }
       stretch			= TRUE
       orientation		= VERTICAL
 
