@@ -1,5 +1,5 @@
 # name: W9-Dark
-# version: 0.15 Gtk2 progressbar like Gtk3
+# 0.17 Gtk2 progressbar, button, combo height
 # author: MD
 # date: 22.12.2020
 
@@ -96,8 +96,8 @@ style "default"
     GtkScale::slider_width = 24
     GtkScale::trough-side-details = 1
     
-  GtkProgressBar::min-horizontal-bar-height = 15
-  GtkProgressBar::min-vertical-bar-width = 15
+  GtkProgressBar::min-horizontal-bar-height = 13
+  GtkProgressBar::min-vertical-bar-width = 13
   GtkProgressBar::xspacing = 4
   GtkProgressBar::yspacing = 4
 
@@ -1130,8 +1130,8 @@ style "menubar_item"
 
 style "button"
 {
-  xthickness = 4
-  ythickness = 4
+  xthickness = 3
+  ythickness = 3
 
   engine "pixmap"
   {
@@ -1310,6 +1310,9 @@ style "notebook_tab_label"
 
 style "combobox_entry"
 {
+    # Since one side of the button is missing, we need to shift the arrow a little to the right
+    GtkButton::inner-border = {0, 1, 0, 0}
+    
 	xthickness	= 4
 	ythickness  = 4
 
@@ -1491,6 +1494,17 @@ style "combobox_entry_button"
 }
 
 
+style "combo_button_padding" {
+
+  # Since one side of the button is missing, we need to shift the arrow a
+  # little to the right.
+  # This is the same thing we've done above but the combo, unlike the combobox,
+  # uses padding the same way as a button.
+  GtkButton::inner-border = {6, 8, 4, 4}
+
+}
+
+
 style "combobox_cell"
 {
     bg[NORMAL] = @base_color
@@ -1508,14 +1522,16 @@ style "spinbutton"
 {
   bg[NORMAL] = @bg_color
 
-  xthickness	= 2
-  ythickness	= 3
+  xthickness	= 4
+  ythickness	= 4
 
   engine "pixmap"
   {
+    # Disable arrows in spinbuttons
     image
     {
       function			= ARROW
+      detail = "spinbutton"
     }
 
 	###################################
@@ -1526,24 +1542,24 @@ style "spinbutton"
       function			= BOX
       state 			= NORMAL
       detail			= "spinbutton_up"
-      file			= "Spin/up-background.png"
+      file			    = "Spin/up-background.png"
       border			= { 1, 4, 4, 0 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-up-small.png"
-      overlay_stretch		= FALSE
-      direction                 = LTR
+      overlay_stretch	= FALSE
+      direction         = LTR
     }
     image
     {
       function			= BOX
       state 			= PRELIGHT
       detail			= "spinbutton_up"
-      file			= "Spin/up-background-prelight.png"
+      file			    = "Spin/up-background-prelight.png"
       border			= { 1, 4, 4, 0 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-up-small-prelight.png"
-      overlay_stretch		= FALSE
-      direction                 = LTR
+      overlay_stretch	= FALSE
+      direction         = LTR
     }
     image
     {
@@ -1554,20 +1570,20 @@ style "spinbutton"
       border			= { 1, 4, 4, 0 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-up-small-insens.png"
-      overlay_stretch		= FALSE
-      direction                 = LTR
+      overlay_stretch	= FALSE
+      direction         = LTR
     }
     image
     {
       function			= BOX
       state 			= ACTIVE
       detail			= "spinbutton_up"
-      file			= "Spin/up-background.png"
+      file			    = "Spin/up-background.png"
       border			= { 1, 4, 4, 0 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-up-small-prelight.png"
-      overlay_stretch		= FALSE
-      direction                 = LTR
+      overlay_stretch	= FALSE
+      direction         = LTR
     }
 
 	###################################
@@ -2004,24 +2020,35 @@ style "handlebox"
 
 style "combobox_separator"
 {
-  xthickness = 0
-  ythickness = 0
-  GtkWidget::wide-separators = 1
+    xthickness = 0
+    ythickness = 0
+    GtkWidget::wide-separators = 1
 }
 
 
 # +combobox height
-style "combobox"
+style "combobox" 
 {
-  xthickness = 2
+
+  xthickness = 4
   ythickness = 2
+
+  # This affects only the button beside an entry
+  GtkButton::inner-border = {0, 0, 0, 0}
+}
+
+
+style "combobox_cellview" 
+{
+  text[NORMAL]   = @fg_color
+  text[PRELIGHT] = @fg_color
 }
 
 
 # padding of select line
 style "combobox_button"
 {
-  xthickness = 1
+  xthickness = 3
   ythickness = 3
 }
 
@@ -2504,15 +2531,37 @@ widget_class "*<GtkMenu>*"			style "menu_framed_box"
 widget_class "*<GtkMenuItem>*"			style "menu_item"
 widget_class "*<GtkMenuBar>.<GtkMenuItem>*"	style "menubar_item"
 widget_class "*<GtkCheckButton>*"               style "checkbutton"
-widget_class "*<GtkComboBox>"                   style "combobox"
-widget_class "*<GtkComboBox>*<GtkButton>"       style "combobox_button"
-widget_class "*<GtkComboBox>*<GtkSeparator>"	style "combobox_separator"
 widget_class "*HandleBox"                       style "handlebox"
 widget_class "*<GtkTreeView>*<GtkButton>*"      style "treeview_header"
 widget_class "*<GtkFileChooserDefault>*<GtkToolbar>" style "inline_toolbar"
 widget_class "*<GtkFileChooserDefault>*<GtkToolbar>*<GtkButton>" style "button_nohilight"
-widget_class "*<GtkComboBoxEntry>*<GtkEntry>"   style "combobox_entry"
-widget_class "*<GtkComboBoxEntry>*<GtkButton>"  style "combobox_entry_button"
+
+#----------------------------------------------------------------------------------------------
+#widget_class "*<GtkComboBox>"                   style "combobox"
+#widget_class "*<GtkComboBox>*<GtkButton>"       style "combobox_button"
+#widget_class "*<GtkComboBox>*<GtkSeparator>"	style "combobox_separator"
+#widget_class "*<GtkComboBoxEntry>*<GtkEntry>"   style "combobox_entry"
+#widget_class "*<GtkComboBoxEntry>*<GtkButton>"  style "combobox_entry_button"
+
+# Fix padding on regular comboboxes
+widget_class "*<GtkComboBox>.<GtkButton>"                          style "combobox"
+# And disable separators on them
+widget_class "*<GtkComboBox>.<GtkButton>*<GtkSeparator>"           style "combobox_separator"
+
+# Join together the ComboBoxEntry entry and button
+widget_class "*<GtkComboBoxEntry>*"                                style "combobox_entry"
+
+# Join the Combo entry and button
+widget_class "*<GtkCombo>*"                                        style "combobox_entry"
+# Tweak the padding on the button a little bit because it
+# uses it a bit differently
+widget_class "*<GtkCombo>.<GtkButton>"                             style "combo_button_padding"
+
+# Alas we cannot do the same for ComboBoxText because there
+# isn't a way to apply the style to only the comboboxes that
+# have an entry inside
+#----------------------------------------------------------------------------------------------
+
 widget_class "*<GtkInfoBar>*<GtkButton>"        style "button_nohilight"
 widget_class "*<GtkNotebook>*<GtkScrolledWindow>*<GtkViewport>"  style "notebook_viewport"
 
@@ -2560,7 +2609,9 @@ widget "*libreoffice-toplevel*GtkSpinButton"  style "libreoffice_entry"
 #widget	"MozillaGtkWidget*"	style	"ff-default"
 widget	"MozillaGtkWidget*crollbar*"	style	"scrollbar"
 
-widget_class "*.<GtkComboBox>.<GtkCellView>"   style "combobox_cell"
+# ComboBoxes tend to draw the button label with text[]
+# instead of fg[], we need to fix that
+widget_class "*<GtkComboBox>*<GtkCellView>"                        style "combobox_cellview"
 
 # Fixes ugly text shadows for insensitive text
 widget_class "*<GtkLabel>"                                          style "text" 

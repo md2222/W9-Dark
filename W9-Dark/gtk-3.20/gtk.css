@@ -1,4 +1,5 @@
 /*
+0.17  progressbar height 11px
 0.16  Gtk3 combobox height
 0.12 levelbar
 0.11 spinbutton entry, nemo, cinnamon
@@ -1307,9 +1308,9 @@ progressbar {
     progressbar trough:backdrop {
       background-color: shade(#404040, 0.8); }
   progressbar.horizontal trough, progressbar.horizontal progress {
-    min-height: 13px; }
+    min-height: 11px; }
   progressbar.vertical trough, progressbar.vertical progress {
-    min-width: 13px; }
+    min-width: 11px; }
 
 treeview.view.progressbar, treeview.view.progressbar:disabled {
   color: #e0e0e0;
