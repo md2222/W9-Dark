@@ -1,4 +1,5 @@
 /*
+0.16  Gtk3 combobox height
 0.12 levelbar
 0.11 spinbutton entry, nemo, cinnamon
 0.10  Gtk2 scale
@@ -27,7 +28,7 @@
   outline-width: 1px;
   outline-offset: -3px;
   outline-style: dashed;
-  outline-color: shade(#909090, 0.7);
+  outline-color: alpha(#ffffff, 0.2);
   -gtk-outline-radius: 0; }
   
   
@@ -628,7 +629,8 @@ scrolledwindow viewport.frame {
   border: none; }
  
 
-iconview:selected, iconview:selected:focus, iconview text:selected, iconview text selection, iconview text:selected:focus, iconview text selection:focus {
+iconview:selected, iconview:selected:focus, iconview text:selected, iconview text selection, iconview text:selected:focus, 
+iconview text selection:focus {
   border-width: 1px;
   border-style: solid;
   border-color: #308cc6;
@@ -638,7 +640,8 @@ iconview:selected:backdrop, iconview selection:backdrop, iconview text:selected:
   color: shade(#f0f0f0, 0.9);
   background-color: shade(#308cc6, 0.9); }
 
-rubberband, flowbox rubberband, treeview.view rubberband, .content-view rubberband, .rubberband, view rubberband, .view.rubberband, .rubberband {
+rubberband, flowbox rubberband, treeview.view rubberband, .content-view rubberband, .rubberband, view rubberband, .view.rubberband, 
+.rubberband {
   border-width: 1px;
   border-style: solid;
   border-color: #909090;
@@ -821,6 +824,9 @@ image {
 .caja-location-entry {
   padding: 3px 5px; }
 
+combobox button.combo {
+  padding-top: 2px;
+  padding-bottom: 2px; }
 arrow, combobox arrow {
   color: alpha(currentColor, 0.75);
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
@@ -2788,10 +2794,15 @@ button.destructive-action {
   color: #e0e0e0;
   background-color: #d14235; 
 }
+button.destructive-action.flat, button.destructive-action.sidebar-button {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  color: #e0e0e0; }
   button.destructive-action:hover {
     border-color: shade(#d14235, 1.35);
     background-color: shade(#d14235, 1.05); }
-  button.destructive-action:active {
+  button.destructive-action:active, button.destructive-action:checked {
     border-color: shade(#d14235, 1.4);
     background-color: shade(#d14235, 1.1); }
   button.destructive-action:backdrop {
