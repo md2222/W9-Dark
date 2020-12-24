@@ -10,7 +10,7 @@ gtk-color-scheme = "base_color:#272d3a\ntext_color:#e0e0e0\ninsensitive_base_col
 # Foreground/background
 gtk-color-scheme = "bg_color:#404040\nfg_color:#e0e0e0"
 # Selected foreground/background
-gtk-color-scheme = "selected_bg_color:#308cc6\nselected_fg_color:#f0f0f0"
+gtk-color-scheme = "selected_bg_color:#308cc6\nselected_fg_color:#f5f5f5"
 # Insensitive foreground/background
 gtk-color-scheme = "insensitive_fg_color:#d0d0d0\ninsensitive_bg_color:#404040"
 # Menus
@@ -141,7 +141,7 @@ style "default"
 	fg[PRELIGHT]	= @fg_color		# Text when mouseover
 	fg[ACTIVE]		= @fg_color		# Text when mouseclicking button, Tabs, Active window list
 	fg[SELECTED]	= @selected_fg_color		# Metacity X when window selected
-	fg[INSENSITIVE]	= shade (0.6, @fg_color)	# Insensitive Text
+	fg[INSENSITIVE]	= shade (0.65, @fg_color)	# Insensitive Text
 
 	base[NORMAL]		= @base_color	# Background color of text widgets and lists. 
 	base[PRELIGHT]		= shade (0.95, @base_color)	# Mouseover menu
@@ -153,7 +153,7 @@ style "default"
 	text[PRELIGHT]		= @text_color	# Text on Mouseover
 	text[ACTIVE]		= @selected_fg_color	# Active text in inactive window ?
 	text[SELECTED]		= @selected_fg_color	 # Active text in active window
-	text[INSENSITIVE]	= shade (0.6, @text_color)	 # Unknown
+	text[INSENSITIVE]	= shade (0.65, @text_color)	 # Unknown
 
 
 	# For succinctness, all reasonable pixmap options remain here
@@ -1566,7 +1566,7 @@ style "spinbutton"
       function			= BOX
       state 			= INSENSITIVE
       detail			= "spinbutton_up"
-      file			= "Spin/up-background-disable.png"
+      file			    = "Spin/up-background-disable.png"
       border			= { 1, 4, 4, 0 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-up-small-insens.png"
@@ -1594,19 +1594,19 @@ style "spinbutton"
       function			= BOX
       state 			= NORMAL
       detail			= "spinbutton_up"
-      file			= "Spin/up-background-rtl.png"
+      file			    = "Spin/up-background-rtl.png"
       border			= { 4, 1, 5, 0 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-up-small.png"
-      overlay_stretch		= FALSE
-      direction                 = RTL
+      overlay_stretch	= FALSE
+      direction         = RTL
     }
     image
     {
       function			= BOX
       state 			= PRELIGHT
       detail			= "spinbutton_up"
-      file			= "Spin/up-background-rtl.png"
+      file			    = "Spin/up-background-rtl.png"
       border			= { 4, 1, 5, 0 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-up-small-prelight.png"
@@ -1618,7 +1618,7 @@ style "spinbutton"
       function			= BOX
       state 			= INSENSITIVE
       detail			= "spinbutton_up"
-      file			= "Spin/up-background-disable-rtl.png"
+      file			    = "Spin/up-background-disable-rtl.png"
       border			= { 4, 1, 5, 0 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-up-small-insens.png"
@@ -1630,7 +1630,7 @@ style "spinbutton"
       function			= BOX
       state 			= ACTIVE
       detail			= "spinbutton_up"
-      file			= "Spin/up-background-rtl.png"
+      file			    = "Spin/up-background-rtl.png"
       border			= { 4, 1, 5, 0 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-up-small-prelight.png"
@@ -1646,48 +1646,48 @@ style "spinbutton"
       function			= BOX
       state 			= NORMAL
       detail			= "spinbutton_down"
-      file			= "Spin/down-background.png"
+      file			    = "Spin/down-background.png"
       border			= { 1, 4, 1, 4 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-down-small.png"
-      overlay_stretch		= FALSE
-      direction                 = LTR
+      overlay_stretch	= FALSE
+      direction         = LTR
     }
     image
     {
       function			= BOX
       state 			= PRELIGHT
       detail			= "spinbutton_down"
-      file			= "Spin/down-background-prelight.png"
+      file			    = "Spin/down-background-prelight.png"
       border			= { 1, 4, 1, 4 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-down-small-prelight.png"
-      overlay_stretch		= FALSE
-      direction                 = LTR
+      overlay_stretch	= FALSE
+      direction         = LTR
     }
     image
     {
       function			= BOX
       state 			= INSENSITIVE
       detail			= "spinbutton_down"
-      file			= "Spin/down-background-disable.png"
+      file			    = "Spin/down-background-disable.png"
       border			= { 1, 4, 1, 4 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-down-small-insens.png"
-      overlay_stretch		= FALSE
-      direction                 = LTR
+      overlay_stretch	= FALSE
+      direction         = LTR
     }
     image
     {
       function			= BOX
       state 			= ACTIVE
       detail			= "spinbutton_down"
-      file			= "Spin/down-background.png"
+      file			    = "Spin/down-background.png"
       border			= { 1, 4, 1, 4 }
       stretch			= TRUE
       overlay_file		= "Arrows/arrow-down-small-prelight.png"
-      overlay_stretch		= FALSE
-      direction                 = LTR
+      overlay_stretch	= FALSE
+      direction         = LTR
     }
 
 	###################################

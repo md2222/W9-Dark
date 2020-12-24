@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-	<name>Arc</name>
-	<author>horst3180</author>
+	<name>W9-Dark</name>
+	<author>horst3180, MD</author>
 	<copyright>horst3180</copyright>
 	<date>2015</date>
 	<description>Arc Metacity theme</description>
@@ -10,7 +10,7 @@
 
 <!-- meaningfull constants -->
 
-<constant name="C_title_focused" value="#f0f0f0" />
+<constant name="C_title_focused" value="#f5f5f5" />
 <constant name="C_title_unfocused" value="#e0e0e0" />
 
 <constant name="C_wm_bg_focused" value="#308cc6" />
