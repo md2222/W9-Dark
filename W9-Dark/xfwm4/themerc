@@ -2,8 +2,8 @@
 # Author: Elbullazul <cmedelahumada@gmail.com>
 # License: GPL-3.0+
 
-active_text_color=#ffffff
-inactive_text_color=#8c8c8c
+active_text_color=#f5f5f5
+inactive_text_color=#d0d0d0
 show_app_icon=true
 full_width_title=true
 #maximized_offset=10
