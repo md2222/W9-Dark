@@ -1,26 +1,27 @@
 # name: W9-Dark
+# 0.21  Gtk2 inline_toolbar
 # 0.17 Gtk2 progressbar, button, combo height
 # author: MD
 # date: 22.12.2020
 
-#gtk-color-scheme	= "bg_color:#404040\nfg_color:#e0e0e0\nbase_color:#272d3a\ntext_color:#e0e0e0\ninsensitive_base_color:#333333\nselected_bg_color:#308cc6\nselected_fg_color:#f0f0f0\ninsensitive_bg_color:#404040\ntooltip_bg_color:#606060\ntooltip_fg_color:#e7e7e7"
+#gtk-color-scheme	= "bg_color:#404041\nfg_color:#e0e0e0\nbase_color:#272d3a\ntext_color:#e0e0e0\ninsensitive_base_color:#333333\nselected_bg_color:#308cc6\nselected_fg_color:#f0f0f0\ninsensitive_bg_color:#404041\ntooltip_bg_color:#606060\ntooltip_fg_color:#e7e7e7"
 
 # Text/base
 gtk-color-scheme = "base_color:#272d3a\ntext_color:#e0e0e0\ninsensitive_base_color:#333333"
 # Foreground/background
-gtk-color-scheme = "bg_color:#404040\nfg_color:#e0e0e0"
+gtk-color-scheme = "bg_color:#404041\nfg_color:#e0e0e0"
 # Selected foreground/background
 gtk-color-scheme = "selected_bg_color:#308cc6\nselected_fg_color:#f5f5f5"
 # Insensitive foreground/background
-gtk-color-scheme = "insensitive_fg_color:#d0d0d0\ninsensitive_bg_color:#404040"
+gtk-color-scheme = "insensitive_fg_color:#d0d0d0\ninsensitive_bg_color:#404041"
 # Menus
-gtk-color-scheme = "menu_color:#404040"
+gtk-color-scheme = "menu_color:#404041"
 # Links
 gtk-color-scheme = "link_color:#00aaff\nvisited_link_color:#0091d9"
 # Treeview headers
-gtk-color-scheme = "column_header_color:#404040\nhover_column_header_color:#474747"
+gtk-color-scheme = "column_header_color:#404041\nhover_column_header_color:#474747"
 # Window decoration
-gtk-color-scheme = "window_color:#404040"
+gtk-color-scheme = "window_color:#404041"
 # Tooltips
 gtk-color-scheme = "tooltip_bg_color:#606060\ntooltip_fg_color:#e7e7e7"
 
@@ -1311,7 +1312,8 @@ style "notebook_tab_label"
 style "combobox_entry"
 {
     # Since one side of the button is missing, we need to shift the arrow a little to the right
-    GtkButton::inner-border = {0, 1, 0, 0}
+    #GtkButton::inner-border = {0, 1, 0, 0}  # ?
+    #GtkButton::inner-border = {1, 0, 0, 0}   # {Left, Right, Top, Bottom} 
     
 	xthickness	= 4
 	ythickness  = 4
@@ -2421,17 +2423,16 @@ style "toolbar"
 
 style "inline_toolbar"
 {
-    GtkToolbar::button-relief       = GTK_RELIEF_NORMAL
+  GtkToolbar::button-relief = GTK_RELIEF_NORMAL
 
-    engine "pixmap"
-    {
-        image
-        {
-            function                = BOX
-            file                    = "Toolbar/inline-toolbar.png"
-            stretch                 = TRUE
-        }
+  engine "pixmap" {
+    image {
+      function = SHADOW
+      file     = "Toolbar/frame-inline.png"
+      border   = {1, 1, 0, 1}
+      stretch  = TRUE
     }
+  }
 }
 
 
