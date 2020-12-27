@@ -1,4 +1,5 @@
 # name: W9-Dark
+# 0.23  Gtk2 combobox fix
 # 0.21  Gtk2 inline_toolbar
 # 0.17 Gtk2 progressbar, button, combo height
 # author: MD
@@ -19,11 +20,11 @@ gtk-color-scheme = "menu_color:#404041"
 # Links
 gtk-color-scheme = "link_color:#00aaff\nvisited_link_color:#0091d9"
 # Treeview headers
-gtk-color-scheme = "column_header_color:#404041\nhover_column_header_color:#474747"
+gtk-color-scheme = "column_header_color:#404041\nhover_column_header_color:#474748"
 # Window decoration
 gtk-color-scheme = "window_color:#404041"
 # Tooltips
-gtk-color-scheme = "tooltip_bg_color:#606060\ntooltip_fg_color:#e7e7e7"
+gtk-color-scheme = "tooltip_bg_color:#606061\ntooltip_fg_color:#e7e7e7"
 
 
 gtk-icon-sizes = "gtk-button=16,16" # This makes button icons smaller.
@@ -133,10 +134,10 @@ style "default"
 	# Colors
 
 	bg[NORMAL]		= @bg_color		# Normal Background, inactive Metacity bar, buttons
-	bg[PRELIGHT]		= shade (1.2, @bg_color)		# Mouseover buttons
+	bg[PRELIGHT]	= shade (1.2, @bg_color)		# Mouseover buttons
 	bg[ACTIVE]		= shade (0.9, @bg_color)		# Mouseclicking, Tabs, active window list
-	bg[SELECTED]		= @selected_bg_color		# Metacity Bar
-	bg[INSENSITIVE] 	= @bg_color		# Insensitive buttons
+	bg[SELECTED]	= @selected_bg_color		# Metacity Bar
+	bg[INSENSITIVE] = @bg_color		# Insensitive buttons
 
 	fg[NORMAL]		= @fg_color		# Metacity and mouseover, Most text
 	fg[PRELIGHT]	= @fg_color		# Text when mouseover
@@ -844,9 +845,9 @@ style "menu_item"
     bg[SELECTED]    = @selected_fg_color
 	bg[PRELIGHT]	= @selected_bg_color
 
-    #fg[NORMAL] = @fg_color
-	#fg[PRELIGHT]	= @selected_fg_color
-	#fg[ACTIVE]	= @selected_fg_color
+    fg[NORMAL] = @fg_color
+	fg[PRELIGHT]	= @selected_fg_color
+	fg[ACTIVE]	= @selected_fg_color
 
 	text[PRELIGHT]	= @text_color
 
@@ -1331,7 +1332,7 @@ style "combobox_entry"
         state           = NORMAL
 		shadow			= IN
 		file			= "Entry/combo-entry-border-bg.png"
-		border			= { 4, 4, 4, 4 }
+		border			= { 4, 4, 5, 4 }
 		stretch			= TRUE
         direction       = LTR
 	}
@@ -1343,7 +1344,7 @@ style "combobox_entry"
         state           = INSENSITIVE
 		shadow			= IN
 		file			= "Entry/combo-entry-border-disabled-bg.png"
-		border			= { 4, 4, 4, 4 }
+		border			= { 4, 4, 5, 4 }
 		stretch			= TRUE
         direction       = LTR
 	}
@@ -1354,7 +1355,7 @@ style "combobox_entry"
 		detail			= "entry"
         state           = ACTIVE
 		file			= "Entry/combo-entry-border-active-bg.png"
-		border			= { 4, 4, 4, 4 }
+		border			= { 4, 4, 5, 4 }
 		stretch			= TRUE
         direction       = LTR
     }
@@ -1503,7 +1504,6 @@ style "combo_button_padding" {
   # This is the same thing we've done above but the combo, unlike the combobox,
   # uses padding the same way as a button.
   GtkButton::inner-border = {6, 8, 4, 4}
-
 }
 
 
@@ -1517,6 +1517,39 @@ style "combobox_cell"
     
 	text[INSENSITIVE]	= shade (0.6, @text_color)	
 	fg[INSENSITIVE]	= shade (0.6, @fg_color)
+}
+
+style "combobox_separator"
+{
+    xthickness = 0
+    ythickness = 0
+    GtkWidget::wide-separators = 1
+}
+
+# +combobox height
+style "combobox" 
+{
+
+  xthickness = 4
+  ythickness = 2  # not for DC
+
+  # This affects only the button beside an entry
+  GtkButton::inner-border = {0, 0, 0, 0}
+}
+
+
+style "combobox_cellview" 
+{
+  text[NORMAL]   = @fg_color
+  text[PRELIGHT] = @fg_color
+}
+
+
+# padding of select line
+style "combobox_button"
+{
+  xthickness = 3
+  ythickness = 2  # + combo  - DC
 }
 
 
@@ -2019,42 +2052,6 @@ style "handlebox"
   }
 }
 
-
-style "combobox_separator"
-{
-    xthickness = 0
-    ythickness = 0
-    GtkWidget::wide-separators = 1
-}
-
-
-# +combobox height
-style "combobox" 
-{
-
-  xthickness = 4
-  ythickness = 2
-
-  # This affects only the button beside an entry
-  GtkButton::inner-border = {0, 0, 0, 0}
-}
-
-
-style "combobox_cellview" 
-{
-  text[NORMAL]   = @fg_color
-  text[PRELIGHT] = @fg_color
-}
-
-
-# padding of select line
-style "combobox_button"
-{
-  xthickness = 3
-  ythickness = 3
-}
-
-
 style "range"
 {	
   engine "pixmap" 
@@ -2545,18 +2542,23 @@ widget_class "*<GtkFileChooserDefault>*<GtkToolbar>*<GtkButton>" style "button_n
 #widget_class "*<GtkComboBoxEntry>*<GtkButton>"  style "combobox_entry_button"
 
 # Fix padding on regular comboboxes
-widget_class "*<GtkComboBox>.<GtkButton>"                          style "combobox"
+widget_class "*<GtkComboBox>"                               style "combobox"
+widget_class "*<GtkComboBox>.<GtkButton>"                   style "combobox_button"
 # And disable separators on them
-widget_class "*<GtkComboBox>.<GtkButton>*<GtkSeparator>"           style "combobox_separator"
+widget_class "*<GtkComboBox>.<GtkButton>*<GtkSeparator>"    style "combobox_separator"
 
 # Join together the ComboBoxEntry entry and button
-widget_class "*<GtkComboBoxEntry>*"                                style "combobox_entry"
+widget_class "*<GtkComboBoxEntry>*"                         style "combobox_entry"
 
 # Join the Combo entry and button
-widget_class "*<GtkCombo>*"                                        style "combobox_entry"
+widget_class "*<GtkCombo>*"                                 style "combobox_entry"
+
+widget_class "*<GtkComboBoxEntry>*<GtkEntry>"   style "combobox_entry"
+widget_class "*<GtkComboBoxEntry>*<GtkButton>"  style "combobox_entry_button"
+
 # Tweak the padding on the button a little bit because it
 # uses it a bit differently
-widget_class "*<GtkCombo>.<GtkButton>"                             style "combo_button_padding"
+widget_class "*<GtkCombo>.<GtkButton>"                      style "combo_button_padding"
 
 # Alas we cannot do the same for ComboBoxText because there
 # isn't a way to apply the style to only the comboboxes that
