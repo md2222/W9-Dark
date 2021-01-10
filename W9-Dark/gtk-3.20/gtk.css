@@ -1,4 +1,5 @@
 /*
+0.24  colors. check, radio right margin 4px. progressbar height 14px.
 0.22  Gtk3 check, radio label margin
 0.21  Gtk2 inline_toolbar, #404041
 0.20  button:disabled color, xfwm4
@@ -21,7 +22,7 @@
   -GtkScrollbar-has-secondary-backward-stepper: false;
   -GtkScrollbar-has-secondary-forward-stepper: false;
   -GtkScrolledwindow-scrollbar-spacing: 0;
-  -GtkScrolledwindow-scrollbars-within-bevel: 0; /* border in Double comm scrollbar ? */
+  -GtkScrolledwindow-scrollbars-within-bevel: 0; 
   -GtkTextView-error-underline-color: #d14235;
   -GtkToolbutton-icon-spacing: 4;
   -GtkToolItemGroup-expander-size: 11;
@@ -161,7 +162,9 @@ button:visited {
     button:active:link, *:selected
     button:active:visited {
       color: shade(#308cc6, 1.1); }
-  button:link > label:backdrop:backdrop:hover, button:visited > label:backdrop:backdrop:hover, button:link > label:backdrop:backdrop:hover:selected, button:visited > label:backdrop:backdrop:hover:selected, button:link > label:backdrop, button:visited > label:backdrop,
+  button:link > label:backdrop:backdrop:hover, button:visited > label:backdrop:backdrop:hover, 
+  button:link > label:backdrop:backdrop:hover:selected, button:visited > label:backdrop:backdrop:hover:selected, 
+  button:link > label:backdrop, button:visited > label:backdrop,
   *:link:backdrop:backdrop:hover,
   button:backdrop:backdrop:hover:link,
   button:backdrop:backdrop:hover:visited,
@@ -301,7 +304,7 @@ checkbutton, radiobutton {
   outline-offset: 0; }
 
 check, radio {
-  margin: 0 3px 0 1px;
+  margin: 0 4px 0 1px;
   min-height: 16px;
   min-width: 16px; }
   /*
@@ -680,85 +683,85 @@ infobar {
 .info {
   border-width: 1px;
   border-style: solid;
-  border-color: shade(#0055FF, 0.8);
-  color: #f0f0f0;
+  border-color: shade(#2b7eb1, 0.8);
+  color: #ffffff;
   background-image: none;
-  background-color: #0055FF; }
+  background-color: #2b7eb1; }
   .info button {
-    border-color: shade(#0055FF, 0.8);
-    color: #f0f0f0;
+    border-color: shade(#2b7eb1, 0.8);
+    color: #ffffff;
     background-image: none;
-    background-color: shade(#0055FF, 1.08); }
+    background-color: shade(#2b7eb1, 1.08); }
     .info button:hover {
-      border-color: shade(#0055FF, 0.85);
-      background-color: shade(#0055FF, 1.1); }
+      border-color: shade(#2b7eb1, 0.85);
+      background-color: shade(#2b7eb1, 1.1); }
     .info button:active {
-      border-color: shade(#0055FF, 0.6);
-      background-color: shade(#0055FF, 0.95); }
+      border-color: shade(#2b7eb1, 0.6);
+      background-color: shade(#2b7eb1, 0.95); }
       .info button:active:hover {
-        border-color: shade(#0055FF, 0.85); }
+        border-color: shade(#2b7eb1, 0.85); }
     .info button.close {
-      color: #f0f0f0; }
+      color: #ffffff; }
       .info button.close:hover {
         background-color: alpha(white, 0.1); }
       .info button.close:active {
-        color: #f0f0f0;
+        color: #ffffff;
         background-color: alpha(black, 0.1); }
 
 .warning {
   border-width: 1px;
   border-style: solid;
-  border-color: shade(#FF8300, 0.8);
-  color: #f0f0f0;
+  border-color: shade(#de7c13, 0.8);
+  color: #ffffff;
   background-image: none;
-  background-color: #FF8300; }
+  background-color: #de7c13; }
   .warning button {
-    border-color: shade(#FF8300, 0.8);
-    color: #f0f0f0;
+    border-color: shade(#de7c13, 0.8);
+    color: #ffffff;
     background-image: none;
-    background-color: shade(#FF8300, 1.08); }
+    background-color: shade(#de7c13, 1.08); }
     .warning button:hover {
-      border-color: shade(#FF8300, 0.85);
-      background-color: shade(#FF8300, 1.1); }
+      border-color: shade(#de7c13, 0.85);
+      background-color: shade(#de7c13, 1.1); }
     .warning button:active {
-      border-color: shade(#FF8300, 0.6);
-      background-color: shade(#FF8300, 0.95); }
+      border-color: shade(#de7c13, 0.6);
+      background-color: shade(#de7c13, 0.95); }
       .warning button:active:hover {
-        border-color: shade(#FF8300, 0.85); }
+        border-color: shade(#de7c13, 0.85); }
     .warning button.close {
-      color: #f0f0f0; }
+      color: #ffffff; }
       .warning button.close:hover {
         background-color: alpha(white, 0.1); }
       .warning button.close:active {
-        color: #f0f0f0;
+        color: #ffffff;
         background-color: alpha(black, 0.1); }
 
 .question {
   border-width: 1px;
   border-style: solid;
-  border-color: shade(#2C2C2C, 0.8);
-  color: #f0f0f0;
+  border-color: shade(#303031, 0.8);
+  color: #ffffff;
   background-image: none;
-  background-color: #2C2C2C; }
+  background-color: #303031; }
   .question button {
-    border-color: shade(#2C2C2C, 0.8);
-    color: #f0f0f0;
+    border-color: shade(#303031, 0.8);
+    color: #ffffff;
     background-image: none;
-    background-color: shade(#2C2C2C, 1.08); }
+    background-color: shade(#303031, 1.08); }
     .question button:hover {
-      border-color: shade(#2C2C2C, 0.85);
-      background-color: shade(#2C2C2C, 1.1); }
+      border-color: shade(#303031, 0.85);
+      background-color: shade(#303031, 1.1); }
     .question button:active {
-      border-color: shade(#2C2C2C, 0.6);
-      background-color: shade(#2C2C2C, 0.95); }
+      border-color: shade(#303031, 0.6);
+      background-color: shade(#303031, 0.95); }
       .question button:active:hover {
-        border-color: shade(#2C2C2C, 0.85); }
+        border-color: shade(#303031, 0.85); }
     .question button.close {
-      color: #f0f0f0; }
+      color: #ffffff; }
       .question button.close:hover {
         background-color: alpha(white, 0.1); }
       .question button.close:active {
-        color: #f0f0f0;
+        color: #ffffff;
         background-color: alpha(black, 0.1); }
 
 .error {
@@ -767,10 +770,10 @@ infobar {
   border-color: shade(#d14235, 1.3);
   background-color: #d14235;
   background-image: none;
-  color: #f0f0f0; }
+  color: #ffffff; }
   .error button {
     border-color: shade(#d14235, 1.3);
-    color: #f0f0f0;
+    color: #ffffff;
     background-image: none;
     background-color: #d14235; }
     .error button:hover {
@@ -780,11 +783,11 @@ infobar {
       .error button:active:hover {
         background-color: shade(#d14235, 1.2); }
     .error button.close {
-      color: #f0f0f0; }
+      color: #ffffff; }
       .error button.close:hover {
         background-color: alpha(white, 0.1); }
       .error button.close:active {
-        color: #f0f0f0;
+        color: #ffffff;
         background-color: alpha(black, 0.1); }
 
 image {
@@ -1325,9 +1328,9 @@ progressbar {
     progressbar trough:backdrop {
       background-color: shade(#404041, 0.8); }
   progressbar.horizontal trough, progressbar.horizontal progress {
-    min-height: 11px; }
+    min-height: 12px; }
   progressbar.vertical trough, progressbar.vertical progress {
-    min-width: 11px; }
+    min-width: 12px; }
 
 treeview.view.progressbar, treeview.view.progressbar:disabled {
   color: #e0e0e0;

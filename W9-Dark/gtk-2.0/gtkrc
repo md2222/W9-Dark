@@ -1,9 +1,12 @@
 # name: W9-Dark
+# 0.24  progressbar height 14px
 # 0.23  Gtk2 combobox fix
 # 0.21  Gtk2 inline_toolbar
 # 0.17 Gtk2 progressbar, button, combo height
 # author: MD
 # date: 22.12.2020
+
+# DC - Double Commander
 
 #gtk-color-scheme	= "bg_color:#404041\nfg_color:#e0e0e0\nbase_color:#272d3a\ntext_color:#e0e0e0\ninsensitive_base_color:#333333\nselected_bg_color:#308cc6\nselected_fg_color:#f0f0f0\ninsensitive_bg_color:#404041\ntooltip_bg_color:#606060\ntooltip_fg_color:#e7e7e7"
 
@@ -68,7 +71,7 @@ style "default"
 	GtkButton::child-displacement-y	= 0
 	GtkButton::default-border	= { 0, 0, 0, 0 }
 	GtkButton::default-outside_border = { 0, 0, 0, 0 }
-    #GtkButton::inner-border           = {4, 4, 4, 4}  # увеличивает размер
+    #GtkButton::inner-border           = {1, 1, 1, 1}  # increases size, 1 - default
 
     GtkEntry::state-hint  = 1
     #GtkEntry::inner-border = {7, 7, 4, 5}
@@ -98,8 +101,8 @@ style "default"
     GtkScale::slider_width = 24
     GtkScale::trough-side-details = 1
     
-  GtkProgressBar::min-horizontal-bar-height = 13
-  GtkProgressBar::min-vertical-bar-width = 13
+  GtkProgressBar::min-horizontal-bar-height = 14
+  GtkProgressBar::min-vertical-bar-width = 14
   GtkProgressBar::xspacing = 4
   GtkProgressBar::yspacing = 4
 
