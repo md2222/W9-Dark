@@ -1,4 +1,5 @@
 /*
+0.25  Gtk2 remake. Improvements for Qt.
 0.24  colors. check, radio right margin 4px. progressbar height 14px.
 0.22  Gtk3 check, radio label margin
 0.21  Gtk2 inline_toolbar, #404041
@@ -36,9 +37,8 @@
   outline-offset: -3px;
   outline-style: dashed;
   outline-color: alpha(#ffffff, 0.3);
-  -gtk-outline-radius: 0; }
-  
-  
+  -gtk-outline-radius: 0; 
+}
 
 .background {
   color: #e0e0e0;
@@ -66,13 +66,13 @@
     background-color: shade(#404041, 0.9); }
   .gtkstyle-fallback:selected {
     color: #f5f5f5;
-    background-color: #308cc6; }
+    background-color: #327cac; }
 
 image, image:disabled, label, label:disabled, box, box:disabled {
   background-color: transparent; }  /* Archive manager, above window system buttons */
 
 label selection {
-  background-color: #308cc6;
+  background-color: #327cac;
   color: #f7f7f7; }
 label.dim-label, label.separator, popover label.separator, popover.background label.separator, label:disabled {
   opacity: 0.6; }
@@ -222,7 +222,7 @@ button {
     border-color: #308cc6; 
   }
   button:disabled {
-    color: shade(#e0e0e0, 0.8);
+    color: shade(#e0e0e0, 0.7);
     border-color: shade(#909091, 0.8);
     background-color: #404041; }
     button:disabled label {
@@ -242,11 +242,11 @@ button {
       background-color: shade(#308cc6, 0.9);
     }
     button:disabled:backdrop {
-        color: shade(#e0e0e0, 0.8);
+        color: shade(#e0e0e0, 0.7);
         border-color: shade(#909091, 0.8);
         background-color: #404041; }
       button:active:disabled:backdrop, button:checked:disabled:backdrop {
-          color: shade(#e0e0e0, 0.8);
+          color: shade(#e0e0e0, 0.7);
           border-color: shade(#308cc6, 1.1);
           background-color: shade(#308cc6, 0.8);
 	}
@@ -458,7 +458,7 @@ treeview.view check:backdrop, treeview.view radio:backdrop {
 	}
   .content-view.view:selected, .content-view.view:active {
 	color: #f5f5f5;
-    background-color: #308cc6; 
+    background-color: #327cac; 
   }
   .content-view.view:disabled {
     background-color: shade(#272d3a, 1.2); }
@@ -479,11 +479,11 @@ calendar {
   calendar:selected {
     border-radius: 0;
     color: #e0e0e0;
-    background-color: #308cc6; }
+    background-color: #327cac; }
   calendar:indeterminate {
     color: alpha(currentColor, 0.55); }
   calendar.highlight {
-    color: #308cc6; }
+    color: #327cac; }
 
 entry {
   padding: 4px;
@@ -499,13 +499,13 @@ entry {
   }
   entry:selected, entry:selected:focus, entry selection, entry selection:focus {
     color: #f5f5f5;
-    background-color: #308cc6; }
+    background-color: #327cac; }
   entry:disabled {
-    color: shade(#e0e0e0, 0.8);
+    color: shade(#e0e0e0, 0.7);
     border-color: shade(#909091, 0.8);
     background-color: shade(#404041, 0.8); }
     entry:disabled:backdrop {
-      color: shade(#e0e0e0, 0.8);
+      color: shade(#e0e0e0, 0.7);
       border-color: shade(#909091, 0.8);
       background-color: shade(#404041, 0.8); }
   entry:backdrop {
@@ -606,19 +606,19 @@ list {
     list row:selected, list row:selected:hover, list row:selected:focus {
       border: none;
       color: #f5f5f5;
-      background-color: #308cc6; }
+      background-color: #327cac; }
       list row:selected:hover, list row:selected:hover:hover, list row:selected:focus:hover {
         color: #f5f5f5;
-        background-color: #308cc6; }
+        background-color: #327cac; }
       list row:selected:active, list row:selected:hover:active, list row:selected:focus:active {
         color: #f5f5f5;
-        background-color: #308cc6; }
+        background-color: #327cac; }
       list row:selected:disabled, list row:selected:hover:disabled, list row:selected:focus:disabled {
         color: shade(#f5f5f5, 0.8);
         background-color: shade(#308cc6, 0.8); }
       list row:selected:backdrop, list row:selected:hover:backdrop, list row:selected:focus:backdrop {
         color: shade(#f5f5f5, 0.9);
-        background-color: shade(#308cc6, 0.9); }
+        background-color: shade(#327cac, 0.9); }
   list separator, list separator:backdrop {
     background: none; }
     
@@ -654,12 +654,12 @@ iconview:selected, iconview:selected:focus, iconview text:selected, iconview tex
 iconview text selection:focus {
   border-width: 1px;
   border-style: solid;
-  border-color: #308cc6;
+  border-color: #327cac;
   color: #f5f5f5;
-  background-color: #308cc6; }
+  background-color: #327cac; }
 iconview:selected:backdrop, iconview selection:backdrop, iconview text:selected:backdrop, iconview text selection:backdrop {
   color: shade(#f5f5f5, 0.9);
-  background-color: shade(#308cc6, 0.9); }
+  background-color: shade(#327cac, 0.9); }
 
 rubberband, flowbox rubberband, treeview.view rubberband, .content-view rubberband, .rubberband, view rubberband, .view.rubberband, 
 .rubberband {
@@ -675,7 +675,7 @@ flowbox flowboxchild {
   flowbox flowboxchild:selected {
     outline-offset: -2px;
     color: #f5f5f5;
-    background-color: #308cc6; }
+    background-color: #327cac; }
 
 infobar {
   border: none; }
@@ -795,13 +795,13 @@ image {
   image:hover {
     color: alpha(currentColor, 0.9); }
   image:selected, image:selected:hover {
-    color: #f0f0f0; }
+    color: #f7f7f7; }
   image:disabled {
     color: alpha(currentColor, 0.5); }
   view image, view image:hover {
     color: alpha(currentColor, 0.9); }
   view image:selected, view image:selected:hover {
-    color: #f0f0f0; }
+    color: #f7f7f7; }
 
 .floating-bar {
   border-width: 1px;
@@ -2457,20 +2457,20 @@ tooltip {
   tooltip.background {
     border-width: 1px;
     border-style: solid;
-    border-color: shade(#f0f0f0, 0.7);
-    background-color: #606060; }
+    border-color: shade(#f7f7f7, 0.7);
+    background-color: #606061; }
     tooltip.background label {
       padding: 1px; }
   tooltip * {
     background-color: #606060;
-    color: #f0f0f0; }
+    color: #f7f7f7; }
 
 textview {
   color: #e0e0e0;
   background-color: #272d3a; }
   textview text:selected, textview text selection, textview text:selected:focus, textview text selection:focus {
     color: #f5f5f5;
-    background-color: #308cc6; }
+    background-color: #327cac; }
 
 treeview {
   -treeview-vertical-separator: 0; 
@@ -2478,16 +2478,16 @@ treeview {
   treeview.view:selected, treeview.view:selected:focus {
     border-radius: 0;
     color: #f5f5f5;
-    background-color: #308cc6; 
+    background-color: #327cac; 
   }
     treeview.view:selected:backdrop, treeview.view:selected:focus:backdrop {
       color: shade(#f5f5f5, 0.9);
-      background-color: shade(#308cc6, 0.9); 
+      background-color: shade(#327cac, 0.9); 
     }
   treeview.view:drop(active) {
     border-style: solid none;
     border-width: 1px;
-    border-color: #308cc6; 
+    border-color: #327cac; 
   }
     treeview.view:drop(active).after {
       border-top-style: none; 
@@ -2532,24 +2532,24 @@ treeview {
     background-color: shade(#404041, 1.3); }
   .view:selected, .view:selected:focus, .view text:selected, .view text:selected:focus {
     color: #f5f5f5;
-    background-color: #308cc6;
+    background-color: #327cac;
     border-radius: 0px;
     -gtk-outline-radius: 0px; }
     .view:selected:disabled, .view:selected:focus:disabled, .view text:selected:disabled, .view text:selected:focus:disabled {
       color: shade(#f5f5f5, 0.8);
-      background-color: shade(#308cc6, 0.8); }
+      background-color: shade(#327cac, 0.8); }
     .view:selected:backdrop, .view:selected:focus:backdrop, .view text:selected:backdrop, .view text:selected:focus:backdrop {
       color: shade(#e0e0e0, 0.9);
-      background-color: shade(#308cc6, 0.9); }
+      background-color: shade(#327cac, 0.9); }
   .view text selection, .view text selection:focus {
     color: #f5f5f5;
-    background-color: #308cc6; }
+    background-color: #327cac; }
     .view text selection:disabled, .view text selection:focus:disabled {
       color: shade(#f5f5f5, 0.8);
-      background-color: shade(#308cc6, 0.8); }
+      background-color: shade(#327cac, 0.8); }
     .view text selection:backdrop, .view text selection:focus:backdrop {
       color: shade(#f5f5f5, 0.9);
-      background-color: shade(#308cc6, 0.9); }
+      background-color: shade(#327cac, 0.9); }
 
 filechooser.csd.background, filechooser placessidebar list, .nautilus-window.csd.background, .nautilus-window placessidebar list, 
 .nemo-window.csd.background, .nemo-window placessidebar list {
@@ -2605,7 +2605,7 @@ filechooser .sidebar, .nautilus-window .sidebar, .nemo-window .sidebar {
   .caja-navigation-window .caja-side-pane .expander {
     color: #e0e0e0; }
     .caja-navigation-window .caja-side-pane .expander:hover {
-      color: #308cc6; }
+      color: #327cac; }
 
 stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list {
   border-right: 1px solid shade(#404041, 0.9);
@@ -3079,7 +3079,7 @@ messagedialog.csd .dialog-action-area button {
   .caja-desktop:active, .nemo-desktop.nemo-canvas-item:active, .nautilus-desktop.nautilus-canvas-item:active {
     color: #f0f0f0; }
   .caja-desktop:selected, .nemo-desktop.nemo-canvas-item:selected, .nautilus-desktop.nautilus-canvas-item:selected {
-    color: #f0f0f0;
+    color: #f7f7f7;
     text-shadow: none; }
 
 panel-toplevel.background, panel-toplevel.background menubar {
@@ -3326,7 +3326,7 @@ overshoot.top, overshoot.right, overshoot.bottom, overshoot.left { background-im
 }
   .nemo-window .nemo-window-pane widget.entry:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus {
     color: #f5f5f5;
-    background-color: #308cc6; 
+    background-color: #327cac; 
   }
 
 UnityDecoration {
@@ -3392,9 +3392,9 @@ UnityPanelWidget, .unity-panel {
 /* text widgets and the like base background color */
 @define-color theme_base_color #272d3a;   
 /* base background color of selections */
-@define-color theme_selected_bg_color #308cc6;
+@define-color theme_selected_bg_color #327cac;
 /* text/foreground color of selections */
-@define-color theme_selected_fg_color #f5f5f5;
+@define-color theme_selected_fg_color #f7f7f7;
 /* base background color of insensitive widgets */
 @define-color insensitive_bg_color #404041;
 /* text foreground color of insensitive widgets */
@@ -3410,9 +3410,9 @@ UnityPanelWidget, .unity-panel {
 /* text widgets and the like base background color on backdrop windows */
 @define-color theme_unfocused_base_color #272d3a;
 /* base background color of selections on backdrop windows */
-@define-color theme_unfocused_selected_bg_color #308cc6;
+@define-color theme_unfocused_selected_bg_color #327cac;
 /* text/foreground color of selections on backdrop windows */
-@define-color theme_unfocused_selected_fg_color shade(#f5f5f5, 0.8);
+@define-color theme_unfocused_selected_fg_color shade(#f7f7f7, 0.8);
 /* insensitive color on backdrop windows*/
 @define-color unfocused_insensitive_color #404041;
 /* widgets main borders color */
