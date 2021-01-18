@@ -744,7 +744,7 @@ style "menu_item" {
       file = "assets/null.png"
       border = { 0, 0, 0, 0 }
       stretch = TRUE
-      overlay_file = "assets/slider.png"
+      overlay_file = "assets/scale-slider-horiz.png"
       overlay_stretch = FALSE
       orientation = HORIZONTAL
     }
