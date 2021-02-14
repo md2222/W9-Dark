@@ -54,7 +54,7 @@
 	<distance name="title_vertical_pad" value="3"/>
 	<border name="title_border" left="10" right="10" top="3" bottom="3"/>
 	<border name="button_border" left="0" right="0" top="1" bottom="0"/>
-  <distance name="button_width" value="36"/>
+  <distance name="button_width" value="34"/>
   <distance name="button_height" value="28"/>
 </frame_geometry>
 
