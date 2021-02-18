@@ -1,4 +1,5 @@
 /*
+0.29  fixed titlebar in ubuntu
 0.28  fixed treeview entry:focus
 0.27  titlebutton min-width: 28px
 0.26  switch:checked border-color
@@ -224,6 +225,15 @@ button {
   button:focus, button:hover:focus, button:active:focus, button:active:hover:focus {
     border-color: #308cc6; 
   }
+  button:backdrop {
+    color: shade(#e0e0e0, 0.9);
+    border-color: shade(#909091, 0.9);
+    background-color: #404041; }
+    button:active:backdrop, button:checked:backdrop {
+      color: shade(#f5f5f5, 0.9);
+      border-color: shade(#308cc6, 1.2);
+      background-color: shade(#308cc6, 0.9);
+    }
   button:disabled {
     color: shade(#e0e0e0, 0.7);
     border-color: shade(#909091, 0.8);
@@ -235,16 +245,7 @@ button {
       border-color: shade(#308cc6, 1.1);
       background-color: shade(#308cc6, 0.8);
     }
-  button:backdrop {
-    color: shade(#e0e0e0, 0.9);
-    border-color: shade(#909091, 0.9);
-    background-color: #404041; }
-    button:active:backdrop, button:checked:backdrop {
-      color: shade(#f5f5f5, 0.9);
-      border-color: shade(#308cc6, 1.2);
-      background-color: shade(#308cc6, 0.9);
-    }
-    button:disabled:backdrop {
+    /*button:disabled:backdrop {
         color: shade(#e0e0e0, 0.7);
         border-color: shade(#909091, 0.8);
         background-color: #404041; }
@@ -252,7 +253,7 @@ button {
           color: shade(#e0e0e0, 0.7);
           border-color: shade(#308cc6, 1.1);
           background-color: shade(#308cc6, 0.8);
-	}
+	}*/
 
   button.flat {
     border-color: transparent;
@@ -271,36 +272,36 @@ button {
       border-color: shade(#308cc6, 1.3);
       background-color: #308cc6;
 	}
-      button.flat:active:backdrop, button.flat:checked:backdrop {
-        color: shade(#f5f5f5, 0.9);
-        border-color: shade(#308cc6, 1.2);
-        background-color: shade(#308cc6, 0.9);
-      }
-      button.flat:active:disabled, button.flat:checked:disabled {
-        color: shade(#f5f5f5, 0.8);
-        border-color: shade(#308cc6, 1.1);
-        background-color: shade(#308cc6, 0.8);
-      }
-        button.flat:active:disabled:backdrop, button.flat:checked:disabled:backdrop {
-            color: shade(#f5f5f5, 0.8);
-            border-color: shade(#308cc6, 1.1);
-            background-color: shade(#308cc6, 0.8);
-        }
-    button.flat:disabled {
-      border-color: transparent;
-      color: shade(#e0e0e0, 0.8);
-      background-color: transparent;
-      background-image: none; }
-      button.flat:disabled:backdrop {
-        border-color: transparent;
-        color: shade(#e0e0e0, 0.8);
-        background-color: transparent;
-        background-image: none; }
     button.flat:backdrop {
       border-color: transparent;
       background-color: transparent;
       color: shade(#e0e0e0, 0.9);
       background-image: none; }
+      button.flat:active:backdrop, button.flat:checked:backdrop {
+        color: shade(#f5f5f5, 0.9);
+        border-color: shade(#308cc6, 1.2);
+        background-color: shade(#308cc6, 0.9);
+      }
+      /*  button.flat:active:disabled:backdrop, button.flat:checked:disabled:backdrop {
+            color: shade(#f5f5f5, 0.8);
+            border-color: shade(#308cc6, 1.1);
+            background-color: shade(#308cc6, 0.8);
+        } */
+    button.flat:disabled {
+      border-color: transparent;
+      color: shade(#e0e0e0, 0.8);
+      background-color: transparent;
+      background-image: none; }
+      button.flat:active:disabled, button.flat:checked:disabled {
+        color: shade(#f5f5f5, 0.8);
+        border-color: shade(#308cc6, 1.1);
+        background-color: shade(#308cc6, 0.8);
+      }
+      /*button.flat:disabled:backdrop {
+        border-color: transparent;
+        color: shade(#e0e0e0, 0.8);
+        background-color: transparent;
+        background-image: none; } */
 
 checkbutton, radiobutton {
   padding: 3px;
@@ -1793,17 +1794,20 @@ switch {
   switch:checked { 
     border-color: shade(#308cc6, 1.3);
     background-color: #308cc6; } 
+  switch:backdrop {
+    border-color: shade(#909091, 0.9); }
     switch:checked:backdrop {
-      background-color: shade(#308cc6, 0.8); } 
+      border-color: shade(#308cc6, 1.2);
+      background-color: shade(#308cc6, 0.9); } 
   switch:disabled {
     border-color: shade(#909091, 0.8);
     background-color: shade(#404041, 0.9); }
-    switch:disabled:backdrop {
+  switch:checked:disabled {
+    border-color: shade(#308cc6, 1.1);
+    background-color: shade(#308cc6, 0.8); } 
+    /*switch:disabled:backdrop {
       border-color: shade(#909091, 0.8);
-      background-color: shade(#404041, 0.9); }
-  switch:backdrop {
-    border-color: shade(#909091, 0.9);
-    background-color: shade(#404041, 0.8); }
+      background-color: shade(#404041, 0.9); } */
   switch slider {
     min-width: 8px;
     min-height: 12px;
@@ -1821,15 +1825,23 @@ switch {
     border-color: shade(#308cc6, 1.3);
     background-color: #308cc6;
   }*/
+  switch:backdrop slider {
+    border-color: shade(#909091, 1.1);
+    background-color: shade(#909091, 0.9); }
+  switch:checked:backdrop slider {
+    border-color: shade(#e0e0e0, 0.9);
+    background-color: shade(#e0e0e0, 0.8);
+  }  
   switch:disabled slider {
     border-color: shade(#909091, 1.0);
     background-color: shade(#909091, 0.8); }
-  switch:disabled:backdrop slider {
+  switch:checked:disabled slider {
+    border-color: shade(#e0e0e0, 0.8);
+    background-color: shade(#e0e0e0, 0.7);
+  }  
+  /*switch:disabled:backdrop slider {
     border-color: shade(#909091, 1.0);
-    background-color: shade(#909091, 0.8); }
-  switch:backdrop slider {
-    border-color: shade(#909091, 1.0);
-    background-color: shade(#909091, 0.8); }
+    background-color: shade(#909091, 0.8); } */
 
 
 colorswatch.top {
@@ -1910,23 +1922,24 @@ colorchooser #add-color-button {
   padding-right: 0; }
 
 headerbar, headerbar:not(.titlebar) {
-  padding: 4px 8px;
+  /* padding: 4px 8px; */
+  padding: 0 4px;
+  color: #e0e0e0;
+  background-color: #404041; 
   /*border: none;*/
   border-width: 0 0 1px 0;
   border-style: solid;
   border-radius: 0;
   border-color: shade(#909091, 0.6);
-  color: #e0e0e0;
-  background-color: #404041; 
 }
   headerbar:backdrop, headerbar:not(.titlebar):backdrop 
   {
-    color: #e0e0e0;
+    color: shade(#e0e0e0, 0.9);
     background-color: #404041; 
   }
-  .titlebar headerbar, .titlebar headerbar:backdrop, .titlebar headerbar:not(.titlebar), .titlebar headerbar:not(.titlebar):backdrop {
+  /*.titlebar headerbar, .titlebar headerbar:backdrop, .titlebar headerbar:not(.titlebar), .titlebar headerbar:not(.titlebar):backdrop {
     background-color: transparent; 
-  }
+  } */
   .tiled headerbar:backdrop, .tiled headerbar, .tiled-top headerbar:backdrop, .tiled-top headerbar, .tiled-right headerbar:backdrop, 
   .tiled-right headerbar, .tiled-bottom headerbar:backdrop, .tiled-bottom headerbar, .tiled-left headerbar:backdrop, 
   .tiled-left headerbar, .maximized headerbar:backdrop, .maximized headerbar, .fullscreen headerbar:backdrop, .fullscreen headerbar, 
@@ -2006,7 +2019,11 @@ headerbar button - buttons in window title
       background-color: #404041; }
   headerbar entry, headerbar:not(.titlebar) entry {
     padding: 4px 8px; }
-
+/* 0.29 */    
+headerbar entry, headerbar button, headerbar separator {
+  margin-top: 4px;
+  margin-bottom: 4px; }
+    
 toolbar {
   padding: 4px;
   border: none;
@@ -3039,8 +3056,8 @@ Window header with buttons
 
 .titlebar, .titlebar:not(headerbar), headerbar.default-decoration, .csd headerbar.default-decoration, 
 .default-decoration.titlebar:not(headerbar), .csd .default-decoration.titlebar:not(headerbar) {
-  min-height: 32px;
-  padding: 2px 4px;
+  min-height: 30px;
+  padding: 0 4px;
   color: #e0e0e0;
   background-color: #404041;
   border-bottom: 1px solid shade(#909091, 0.6); 
@@ -3053,8 +3070,6 @@ Window header with buttons
   .titlebar:backdrop, .titlebar:not(headerbar):backdrop, headerbar.default-decoration:backdrop, .csd headerbar.default-decoration:backdrop, 
   .default-decoration.titlebar:not(headerbar):backdrop, .csd .default-decoration.titlebar:not(headerbar):backdrop {
     color: shade(#e0e0e0, 0.8);
-    /*background-color: shade(#404041, 0.85);
-    border-bottom-color: shade(#404041, 0.9); */
 }
 
 messagedialog .background.csd {
