@@ -70,10 +70,8 @@ StScrollBar StButton#vhandle:hover {
 .notification-icon-button,
 .modal-dialog-button {
     color: white;
-    border: 1px solid #8b8b8b;
-    background-gradient-direction: vertical;
-    background-gradient-start: rgba(255, 255, 255, 0.2);
-    background-gradient-end: rgba(255, 255, 255, 0);
+    border: 1px solid #909090;
+    background-color: #404041;
     font-size: 8.5pt;
     font-weight: normal;
     text-align: center;
@@ -82,22 +80,21 @@ StScrollBar StButton#vhandle:hover {
 .notification-button:hover,
 .notification-icon-button:hover,
 .modal-dialog-button:hover {
-    background-gradient-start: rgba(255, 255, 255, 0.3);
-    background-gradient-end: rgba(255, 255, 255, 0.1);
+    border-color: #327cac;
 }
 
 .notification-button:focus,
 .notification-icon-button:focus,
 .modal-dialog-button:focus {
-    border: 1px solid rgba(35, 35, 35, 1);
+    border-color: #327cac;
 }
 
 .notification-button:active,
 .notification-icon-button:active,
 .modal-dialog-button:active,
 .modal-dialog-button:pressed {
-    background-gradient-start: rgba(255, 255, 255, 0);
-    background-gradient-end: rgba(255, 255, 255, 0.2);
+    background-color: #327cac;
+    border-color: #327cac;
 }
 
 /* ===================================================================
@@ -715,12 +712,8 @@ StScrollBar StButton#vhandle:hover {
     /*border-radius: 10px 10px 10px 10px;*/
     border-radius: 0px;
     /*border: 4px solid rgba(200, 200, 200, 0.5);*/
-	border: none;
-    background-gradient-direction: vertical;
-    /*background-gradient-start: rgba(80, 80, 80, 0.9);
-    background-gradient-end: rgba(80, 80, 80, 0.9);*/
-    background-gradient-start: #505051;
-    background-gradient-end: #505051;
+	border: 1px solid #606060;
+    background-color: #404041;
     padding: 10px;
     spacing-rows: 10px;
     spacing-columns: 10px;
