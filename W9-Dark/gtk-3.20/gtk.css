@@ -1,4 +1,5 @@
 /*
+0.30  toolbar border-bottom, primary-toolbar border-color
 0.29  fixed titlebar in ubuntu
 0.28  fixed treeview entry:focus
 0.27  titlebutton min-width: 28px
@@ -936,7 +937,7 @@ menu, .menu {
     min-height: 16px; }
     menu > arrow.top, .menu > arrow.top {
       margin-top: -6px;
-      border-bottom: 1px solid shade(#909091, 0.9);
+      border-bottom: 1px solid shade(#909091, 0.8);
       -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
     menu > arrow.bottom, .menu > arrow.bottom {
       margin-bottom: -6px;
@@ -1845,29 +1846,29 @@ switch {
 
 
 colorswatch.top {
-  border-top-left-radius: 2.5px;
-  border-top-right-radius: 2.5px; }
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px; }
   colorswatch.top overlay {
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px; }
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px; }
 colorswatch.bottom {
-  border-bottom-left-radius: 2.5px;
-  border-bottom-right-radius: 2.5px; }
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px; }
   colorswatch.bottom overlay {
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px; }
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px; }
 colorswatch.left, colorswatch:first-child:not(.top) {
-  border-top-left-radius: 2.5px;
-  border-bottom-left-radius: 2.5px; }
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px; }
   colorswatch.left overlay, colorswatch:first-child:not(.top) overlay {
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px; }
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px; }
 colorswatch.right, colorswatch:last-child:not(.bottom) {
-  border-top-right-radius: 2.5px;
-  border-bottom-right-radius: 2.5px; }
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px; }
   colorswatch.right overlay, colorswatch:last-child:not(.bottom) overlay {
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px; }
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 02px; }
 colorswatch.dark overlay {
   color: alpha(white, 0.7); }
   colorswatch.dark overlay:hover {
@@ -2026,7 +2027,7 @@ headerbar entry, headerbar button, headerbar separator {
     
 toolbar {
   padding: 4px;
-  border: none;
+  border-bottom: 1px solid shade(#909091, 0.6); 
   color: #e0e0e0;
   background-color: #404041; }
   toolbar:backdrop {
@@ -2100,7 +2101,7 @@ toolbar {
   color: #e0e0e0;
   background-color: #404041; }
   .primary-toolbar:backdrop {
-    border-color: shade(#909091, 0.8);
+    border-color: shade(#909091, 0.6);
     color: shade(#e0e0e0, 0.9);
     background-color: #404041; }
     
