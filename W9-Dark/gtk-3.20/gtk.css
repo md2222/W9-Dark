@@ -1,4 +1,5 @@
 /*
+0.32  button:focus for button.destructive-action
 0.31  treeview header button:backdrop, actionbar border-color
 0.30  toolbar border-bottom, primary-toolbar border-color
 0.29  fixed titlebar in ubuntu
@@ -214,6 +215,10 @@ button {
   color: #e0e0e0;
   background-color: #404041;
 }
+  /*button:focus, button:hover:focus, button:active:focus, button:active:hover:focus {*/
+  button:focus {
+    border-color: #308cc6; 
+  }
   button:hover {
     color: #f0f0f0;
     border-color: #308cc6;
@@ -223,9 +228,6 @@ button {
     color: #f5f5f5;
     border-color: shade(#308cc6, 1.3);
     background-color: #308cc6;
-  }
-  button:focus, button:hover:focus, button:active:focus, button:active:hover:focus {
-    border-color: #308cc6; 
   }
   button:backdrop {
     color: shade(#e0e0e0, 0.9);
@@ -244,8 +246,8 @@ button {
       opacity: 1; }
     button:active:disabled, button:checked:disabled {
       color: shade(#f5f5f5, 0.8);
-      border-color: shade(#308cc6, 1.1);
-      background-color: shade(#308cc6, 0.8);
+      border-color: shade(#308cc6, 1.0);
+      background-color: shade(#308cc6, 0.85);
     }
     /*button:disabled:backdrop {
         color: shade(#e0e0e0, 0.7);
@@ -1990,19 +1992,19 @@ headerbar button - buttons in window title
       headerbar:not(.titlebar) button:checked:backdrop {
         color: shade(#f5f5f5, 0.9);
         border-color: shade(#308cc6, 1.2);
-        background-color: shade(#308cc6, 0.9);
+        background-color: shade(#308cc6, 0.95);
       }
       headerbar button:active:disabled, headerbar button:checked:disabled, headerbar:not(.titlebar) button:active:disabled, 
       headerbar:not(.titlebar) button:checked:disabled {
         color: shade(#f5f5f5, 0.8);
         border-color: shade(#308cc6, 1.1);
-        background-color: shade(#308cc6, 0.8);
+        background-color: shade(#308cc6, 0.85);
       }
         headerbar button:active:disabled:backdrop, headerbar button:checked:disabled:backdrop, 
         headerbar:not(.titlebar) button:active:disabled:backdrop, headerbar:not(.titlebar) button:checked:disabled:backdrop {
             color: shade(#f5f5f5, 0.8);
             border-color: shade(#308cc6, 1.1);
-            background-color: shade(#308cc6, 0.8);
+            background-color: shade(#308cc6, 0.85);
          }
     headerbar button:focus, headerbar button:hover:focus, headerbar button:active:focus, headerbar button:active:hover:focus, 
     headerbar:not(.titlebar) button:focus, headerbar:not(.titlebar) button:hover:focus, headerbar:not(.titlebar) button:active:focus, 
@@ -2877,7 +2879,7 @@ button.destructive-action.flat, button.destructive-action.sidebar-button {
     background-color: shade(#d14235, 1.05); }
   button.destructive-action:active, button.destructive-action:checked {
     background-color: shade(#d14235, 1.1); 
-    border-color: shade(#d14235, 1.4);
+    border-color: shade(#d14235, 1.5);
   }
   button.destructive-action:backdrop {
     border-color: shade(#d14235, 1.1);
