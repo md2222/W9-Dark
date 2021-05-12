@@ -7,12 +7,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4f, 2020-05-01)"
-   sodipodi:docname="close-window.svg"
-   id="svg25"
-   version="1.1"
+   height="32"
    width="32"
-   height="32">
+   version="1.1"
+   id="svg25"
+   sodipodi:docname="close-window.svg"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)">
   <metadata
      id="metadata29">
     <rdf:RDF>
@@ -25,84 +25,81 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     inkscape:window-maximized="1"
-     inkscape:window-y="0"
-     inkscape:window-x="0"
-     inkscape:document-rotation="0"
-     inkscape:current-layer="g23"
-     inkscape:cy="20.440448"
-     inkscape:cx="7.1061266"
-     inkscape:zoom="14.75"
-     showgrid="false"
-     id="namedview27"
-     inkscape:window-height="1023"
-     inkscape:window-width="1920"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0"
-     guidetolerance="10"
-     gridtolerance="10"
-     objecttolerance="10"
-     borderopacity="1"
+     pagecolor="#ffffff"
      bordercolor="#666666"
-     pagecolor="#ffffff" />
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
+     id="namedview27"
+     showgrid="false"
+     inkscape:zoom="14.75"
+     inkscape:cx="7.1061266"
+     inkscape:cy="20.440448"
+     inkscape:current-layer="g23"
+     inkscape:document-rotation="0"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
   <defs
      id="defs13">
     <filter
-       color-interpolation-filters="sRGB"
-       height="1.4261"
-       x="-.21298"
-       y="-.21306"
+       id="b"
        width="1.426"
-       id="b">
+       y="-.21306"
+       x="-.21298"
+       height="1.4261"
+       color-interpolation-filters="sRGB">
       <feGaussianBlur
-         id="feGaussianBlur2"
-         stdDeviation="0.71020915" />
+         stdDeviation="0.71020915"
+         id="feGaussianBlur2" />
     </filter>
     <radialGradient
-       r="8.6929"
-       gradientTransform="matrix(1.4402,0,0,1.4461,4.7538969,1.8907466)"
-       cx="7.6583"
-       cy="5.8191"
+       id="d"
        gradientUnits="userSpaceOnUse"
-       id="d">
+       cy="5.8191"
+       cx="7.6583"
+       gradientTransform="matrix(1.4402,0,0,1.4461,4.7538969,1.8907466)"
+       r="8.6929">
       <stop
-         id="stop5"
+         stop-color="#7b7b7b"
          offset="0"
-         stop-color="#7b7b7b" />
+         id="stop5" />
       <stop
-         id="stop7"
+         stop-color="#101010"
          offset="1"
-         stop-color="#101010" />
+         id="stop7" />
     </radialGradient>
     <filter
-       x="-0.168"
-       y="-0.168"
-       width="1.336"
-       height="1.336"
+       id="filter4202"
        style="color-interpolation-filters:sRGB"
-       id="filter4202">
+       height="1.336"
+       width="1.336"
+       y="-0.168"
+       x="-0.168">
       <feGaussianBlur
-         id="feGaussianBlur10"
-         stdDeviation="1.64206" />
+         stdDeviation="1.64206"
+         id="feGaussianBlur10" />
     </filter>
   </defs>
   <g
-     id="g23"
-     transform="translate(0,1.415)">
+     transform="translate(0,1.415)"
+     id="g23">
+    <rect
+       y="2.71"
+       x="4.007"
+       height="24"
+       width="24"
+       id="rect903"
+       style="opacity:0.997;fill:#e84b3c;fill-opacity:1;stroke:none;stroke-width:1.06226" />
     <path
-       id="path19"
-       d="m 12.002,11.993 v 1 c -0.02191,0.28075 0.07051,0.55537 0.28125,0.75 l 2.2812,2.2812 -2.2812,2.25 c -0.188,0.188 -0.281,0.454 -0.281,0.719 v 1 h 1 c 0.26529,0 0.53059,-0.0931 0.71875,-0.28125 l 2.281,-2.29 2.281,2.29 c 0.18816,0.18815 0.45345,0.28124 0.71875,0.28125 h 1 v -1 c -8e-6,-0.2653 -0.09306,-0.53058 -0.28125,-0.71875 l -2.25,-2.25 2.2812,-2.2812 c 0.21566,-0.19935 0.25,-0.46353 0.25,-0.75 v -1 h -1 c -0.24083,0.007 -0.42188,0.082 -0.6875,0.3125 l -2.3125,2.2812 -2.282,-2.28 c -0.17763,-0.18392 -0.43255,-0.3013 -0.6875,-0.3125 -0.01046,-4.6e-4 -0.02088,-1.2e-4 -0.03125,0 h -1 z"
-       filter="url(#b)" />
-    <circle
-       r="12"
-       cy="14.659636"
-       cx="15.863377"
-       id="path1613"
-       style="fill:#e84b3c;stroke:none;stroke-width:4.87776;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1" />
-    <path
-       style="stroke:none"
-       id="path21"
+       fill="#ffffff"
        d="m 12.002,10.626 h 1 c 0.01031,-1.2e-4 0.02079,-4.59e-4 0.03125,0 0.25495,0.01121 0.50986,0.12858 0.6875,0.3125 l 2.2811,2.2811 2.3125,-2.2811 c 0.26562,-0.2305 0.44667,-0.3055 0.6875,-0.3125 h 1 v 1 c 0,0.28647 -0.03435,0.55065 -0.25,0.74999 l -2.2811,2.2811 2.25,2.25 c 0.18818,0.18817 0.28124,0.45345 0.28124,0.71875 v 1 h -1 c -0.26529,-1.1e-5 -0.53058,-0.0931 -0.71874,-0.28124 l -2.2798,-2.2798 -2.2818,2.2811 c -0.18824,0.18838 -0.45348,0.2805 -0.71885,0.2805 h -0.9999 v -1 c -3e-6,-0.26529 0.09306,-0.53058 0.28124,-0.71875 l 2.2811,-2.2495 -2.2811,-2.2811 c -0.21,-0.194 -0.302,-0.468 -0.28,-0.749 v -1 z"
-       fill="#ffffff" />
+       id="path21"
+       style="stroke:none" />
   </g>
 </svg>
