@@ -40,20 +40,20 @@ StScrollBar StBin#trough {
 }
 
 StScrollBar StButton#vhandle {
-    background-color: rgba(110, 110, 110, 1);
-    border: 1px solid rgba(110, 110, 110, 1);
+    background-color: #727273;
+    border: 1px solid #727273;
     border-radius: 0px;
 }
 
 StScrollBar StButton#hhandle {
-    background-color: rgba(110, 110, 110, 1);
-    border: 1px solid rgba(110, 110, 110, 1);
+    background-color: #727273;
+    border: 1px solid #727273;
     border-radius: 0px;
 }
 
 StScrollBar StButton#hhandle:hover,
 StScrollBar StButton#vhandle:hover {
-    background-color: rgba(120, 120, 120, 1);
+    background-color: #828283;
 }
 
 #Tooltip {
@@ -110,7 +110,7 @@ StScrollBar StButton#vhandle:hover {
     border: 1px solid #505050;
     border-radius: 0;
     background-color: #333334;
-    color: #fafafa;
+    color: #e0e0e0;
     font-size: 9.5pt;
     min-width: 100px;
 }
@@ -1309,8 +1309,8 @@ StScrollBar StButton#vhandle:hover {
 #menu-search-entry {
     padding: 4px 12px;
     border-radius: 0;
-    color: #f0f0f0;
-    border: 1px solid rgba(144, 144, 144, 0.8);
+    color: #e0e0e0;
+    border: 1px solid #808080;
     background-color: #272d3a;
     selected-color: black;
     caret-color: rgb(128, 128, 128);
@@ -1318,13 +1318,13 @@ StScrollBar StButton#vhandle:hover {
     width: 250px;
     transition-duration: 300;
     font-size: 1.2em;
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
 #menu-search-entry:focus,
 #menu-search-entry:hover {
-    background-color: #272d3a;
-    border: 1px solid rgba(144, 144, 144, 1.0);
+    border: 1px solid #327cac;
 }
 
 #menu-search-entry:hover {
@@ -1332,8 +1332,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 #menu-search-entry:focus {
-    color: #f0f0f0;
-    font-weight: bold;
+    color: #e0e0e0;
     transition-duration: 0;
 }
 
