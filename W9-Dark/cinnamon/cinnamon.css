@@ -1,4 +1,5 @@
 /*
+0.34  cinnamon minor changes
 0.33  cinnamon improvements
 * /
 
@@ -115,32 +116,12 @@ StScrollBar StButton#vhandle:hover {
     min-width: 100px;
 }
 
-.menu.top {
-    border-radius: 0;
-    border-top-width: 0;
-}
-
-.menu.bottom {
-    border-radius: 0;
-    border-bottom-width: 0;
-}
-
-.menu.left {
-    border-radius: 0;
-    border-left-width: 0;
-}
-
-.menu.right {
-    border-radius: 0;
-    border-right-width: 0;
-}
-
 .popup-submenu-menu-item:open {
-    background-color: #4c4c4d;
+    background-color: #424243;
 }
 
 .popup-sub-menu {
-    background-color: #383839;
+    background-color: #2a2a2b;
 }
 
 .popup-sub-menu .popup-menu-item:ltr {
@@ -160,7 +141,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .popup-sub-menu StScrollBar StBin#vhandle {
-    background-color: #4c4c4c;
+    background-color: #424243;
     border-width: 0px;
 }
 
@@ -186,7 +167,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .popup-menu-item:active {
-    background-color: #4c4c4d;
+    background-color: #424243;
 }
 
 .popup-menu-item:insensitive {
