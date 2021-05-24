@@ -1,5 +1,6 @@
 /*
-0.33  cinnamon menu button border
+0.35  list row:hover
+0.33  cinnamon improvements
 0.32  button:focus for button.destructive-action
 0.31  treeview header button:backdrop, actionbar border-color
 0.30  toolbar border-bottom, primary-toolbar border-color
@@ -463,7 +464,7 @@ treeview.view check:backdrop, treeview.view radio:backdrop {
 .content-view.view {
   background-color: #272d3a; }
   .content-view.view:hover {
-    background-color: shade(#272d3a, 1.5); 
+    background-color: shade(#272d3a, 1.4); 
 	}
   .content-view.view:selected, .content-view.view:active {
 	color: #f5f5f5;
@@ -606,7 +607,7 @@ list {
       color: #f0f0f0;
       /*background-color: shade(#308cc6, 0.75);*/
       /*background-color: shade(#272d3a, 1.5);*/
-      background-color: alpha(#ffffff, 0.1);
+      background-color: alpha(#ffffff, 0.06);
 	}
     list row:active {
       color: #f5f5f5;
