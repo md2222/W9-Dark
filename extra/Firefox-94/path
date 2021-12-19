@@ -1,0 +1,7 @@
+~/.mozilla/firefox/<your-profile>/chrome/userChrome.css
+
+How to find your profile - 
+https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data
+
+You need to make sure that on the about:config page in Firefox, 
+the toolkit.legacyUserProfileCustomizations.stylesheets preference is set to true and then restart the browser. 
