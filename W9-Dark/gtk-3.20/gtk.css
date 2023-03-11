@@ -1,4 +1,5 @@
 /*
+0.38  headerbar.default-decoration:backdrop fixed
 0.37  headerbar.default-decoration colors for LM 21
 0.35  list row:hover
 0.33  cinnamon improvements
@@ -3087,6 +3088,9 @@ Window header with buttons
 headerbar.default-decoration {
   color: #f5f5f5;
   background-color: #308cc6;
+}
+headerbar.default-decoration:backdrop {
+  background-color: #606061;
 }
 
 
