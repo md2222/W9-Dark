@@ -1,4 +1,5 @@
 /*
+0.39  reduced headerbar height without toolbuttons
 0.38  headerbar.default-decoration:backdrop fixed
 0.37  headerbar.default-decoration colors for LM 21
 0.35  list row:hover
@@ -2026,12 +2027,26 @@ headerbar button - buttons in window title
       color: shade(#e0e0e0, 0.9);
       border-color: shade(#909091, 0.9);
       background-color: #404041; }
+
   headerbar entry, headerbar:not(.titlebar) entry {
-    padding: 4px 8px; }
+    padding: 4px 8px;
+  }
 /* 0.29 */    
 headerbar entry, headerbar button, headerbar separator {
   margin-top: 4px;
-  margin-bottom: 4px; }
+  margin-bottom: 4px;
+}
+
+headerbar.default-decoration {
+  min-height: 30px;
+  padding: 0 4px;
+  color: #f5f5f5;
+  background-color: #308cc6;
+}
+headerbar.default-decoration:backdrop {
+  background-color: #606061;
+}
+
     
 toolbar {
   padding: 4px;
@@ -2931,16 +2946,17 @@ headerbar.selection-mode, toolbar.selection-mode {
     headerbar.selection-mode .selection-menu button .dim-label, toolbar.selection-mode .selection-menu button .dim-label {
       color: #e0e0e0; }
 
+
 decoration {
   border: 1px solid #6fafda;  /* #MD */
   border-radius: 0;
-  box-shadow: 0 3px 7px 1px alpha(#000000, 0.4);
+  box-shadow: 0 3px 7px 1px alpha(#000000, 0.7);
   margin: 10px; 
 }
   decoration:backdrop {
-    border: 1px solid #c9c9c9;
+    border: 1px solid #606061;
     /*box-shadow: 0 3px 4px 1px transparent, 0 2px 6px 2px alpha(#000000, 0.2), 0 0 0 1px alpha(#000000, 0.18); */
-    box-shadow: 0 3px 7px 1px alpha(#000000, 0.2);
+    box-shadow: 0 3px 7px 1px alpha(#000000, 0.5);
   }
   .maximized decoration, .fullscreen decoration, .tiled decoration, .tiled-top decoration, .tiled-right decoration, .tiled-bottom decoration, .tiled-left decoration {
     border-radius: 0; 
@@ -3067,7 +3083,8 @@ Window header with buttons
     border-radius: 0; 
 }
 
-.titlebar, .titlebar:not(headerbar), headerbar.default-decoration, .csd headerbar.default-decoration, 
+/* headerbar.default-decoration, .csd headerbar.default-decoration, */
+.titlebar, .titlebar:not(headerbar),  
 .default-decoration.titlebar:not(headerbar), .csd .default-decoration.titlebar:not(headerbar) {
   min-height: 30px;
   padding: 0 4px;
@@ -3084,13 +3101,15 @@ Window header with buttons
   .default-decoration.titlebar:not(headerbar):backdrop, .csd .default-decoration.titlebar:not(headerbar):backdrop {
     color: shade(#e0e0e0, 0.8);
 }
-
-headerbar.default-decoration {
-  color: #f5f5f5;
-  background-color: #308cc6;
+/* 0.39 */
+.titlebar entry, .titlebar button, .titlebar separator {
+  margin-top: 4px;
+  margin-bottom: 4px; 
 }
-headerbar.default-decoration:backdrop {
-  background-color: #606061;
+/* minimize, maximize, close buttons */
+headerbar button.titlebutton, .titlebar button.titlebutton {
+  margin-top: 0px;
+  margin-bottom: 0px; 
 }
 
 

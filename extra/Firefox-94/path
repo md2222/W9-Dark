@@ -5,3 +5,13 @@ https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data
 
 You need to make sure that on the about:config page in Firefox, 
 the toolkit.legacyUserProfileCustomizations.stylesheets preference is set to true and then restart the browser. 
+
+
+Scrollbar setting
+
+Open about:config
+Search "scrollbar"
+
+layout.testing.overlay-scrollbars.always-visible = true
+widget.non-native-theme.gtk.scrollbar.round-thumb = false
+widget.non-native-theme.gtk.scrollbar.thumb-size = 1
